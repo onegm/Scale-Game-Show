@@ -9,4 +9,4 @@
 position = Vector2(355, 279)
 
 [node name="WallSpawner" parent="." instance=ExtResource("2_iwfjl")]
-position = Vector2(1078, 284)
+position = Vector2(1134, 475)

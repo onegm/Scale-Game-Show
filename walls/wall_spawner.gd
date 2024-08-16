@@ -11,3 +11,4 @@ func spawn_wall():
 	var new_wall = wall_posture_scene.instantiate()
 	add_child(new_wall)
 	new_wall.set_posture(rand.randi_range(0, 8))
+	new_wall.set_wall_and_posture_scale(rand.randi_range(1, 3))

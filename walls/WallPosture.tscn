@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://bldld0uo8ocjq" path="res://walls/wall.png" id="3_axnak"]
 
 [node name="WallPosture" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_yoqds")
 
 [node name="Posture" parent="." instance=ExtResource("2_bdc4o")]
-scale = Vector2(0.6, 0.6)
 
 [node name="Wall" type="Sprite2D" parent="Posture"]
-scale = Vector2(1.1, 1.1)
 texture = ExtResource("3_axnak")
+offset = Vector2(0, -340)

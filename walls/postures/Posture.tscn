@@ -1,50 +1,58 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1fvq2460vh11"]
+[gd_scene load_steps=32 format=3 uid="uid://d1fvq2460vh11"]
 
-[ext_resource type="Texture2D" uid="uid://ccfngsbvj87kh" path="res://walls/postures/postures.png" id="1_0xsb4"]
+[ext_resource type="Texture2D" uid="uid://bw8ajx4a87xqt" path="res://walls/postures/Wall Holes/Idle - White.png" id="1_kr8ek"]
+[ext_resource type="Texture2D" uid="uid://bxl8hd5r4ghjg" path="res://walls/postures/Wall Holes/Pose 1 - Right White.png" id="2_83wkl"]
 [ext_resource type="Script" path="res://walls/postures/posture.gd" id="2_hqkx4"]
+[ext_resource type="Texture2D" uid="uid://d0gd3fuo8dtev" path="res://walls/postures/Wall Holes/Pose 1 - Left White.png" id="3_haxd5"]
 [ext_resource type="Texture2D" uid="uid://cdkfpce136suy" path="res://walls/postures/outlines.png" id="3_sjgld"]
+[ext_resource type="Texture2D" uid="uid://bi5ryr80lfuhx" path="res://walls/postures/Wall Holes/Pose 2 - Right White.png" id="4_p6v4h"]
+[ext_resource type="Texture2D" uid="uid://oji6kf0fc6q4" path="res://walls/postures/Wall Holes/Pose 2 - Left White.png" id="5_jopgx"]
+[ext_resource type="Texture2D" uid="uid://bdr734u22gmn0" path="res://walls/postures/Wall Holes/Pose 3 - Right White.png" id="6_us3se"]
+[ext_resource type="Texture2D" uid="uid://cw2mpwny5akrn" path="res://walls/postures/Wall Holes/Pose 3 - Left White.png" id="7_4bhwb"]
+[ext_resource type="Texture2D" uid="uid://bh3kdb4meqo4g" path="res://walls/postures/Wall Holes/Pose 4 - Right White.png" id="8_7eyi1"]
+[ext_resource type="Texture2D" uid="uid://b6jsgdyqx3qmr" path="res://walls/postures/Wall Holes/Pose 4 - Left White.png" id="9_g35uw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8pvq3"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(750, 0, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bv54"]
+atlas = ExtResource("1_kr8ek")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0fhup"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(1500, 0, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gfko"]
+atlas = ExtResource("2_83wkl")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jarxe"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(1500, 750, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hys8"]
+atlas = ExtResource("3_haxd5")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mbhxv"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(2250, 0, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2st8v"]
+atlas = ExtResource("4_p6v4h")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0chi"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(2250, 750, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iris"]
+atlas = ExtResource("5_jopgx")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8nc3g"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(0, 750, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5q7y3"]
+atlas = ExtResource("6_us3se")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_abx1o"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(0, 1500, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpkfk"]
+atlas = ExtResource("7_4bhwb")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_akrky"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(750, 750, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0qkb"]
+atlas = ExtResource("8_7eyi1")
+region = Rect2(0, 0, 750, 750)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_um37a"]
-atlas = ExtResource("1_0xsb4")
-region = Rect2(750, 1500, 750, 750)
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvkdo"]
+atlas = ExtResource("9_g35uw")
+region = Rect2(0, 0, 750, 750)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mrt07"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8pvq3")
+"texture": SubResource("AtlasTexture_6bv54")
 }],
 "loop": false,
 "name": &"0",
@@ -52,7 +60,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0fhup")
+"texture": SubResource("AtlasTexture_3gfko")
 }],
 "loop": false,
 "name": &"1",
@@ -60,7 +68,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jarxe")
+"texture": SubResource("AtlasTexture_3hys8")
 }],
 "loop": false,
 "name": &"2",
@@ -68,7 +76,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mbhxv")
+"texture": SubResource("AtlasTexture_2st8v")
 }],
 "loop": false,
 "name": &"3",
@@ -76,7 +84,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m0chi")
+"texture": SubResource("AtlasTexture_1iris")
 }],
 "loop": false,
 "name": &"4",
@@ -84,7 +92,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8nc3g")
+"texture": SubResource("AtlasTexture_5q7y3")
 }],
 "loop": false,
 "name": &"5",
@@ -92,7 +100,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_abx1o")
+"texture": SubResource("AtlasTexture_fpkfk")
 }],
 "loop": false,
 "name": &"6",
@@ -100,7 +108,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_akrky")
+"texture": SubResource("AtlasTexture_q0qkb")
 }],
 "loop": false,
 "name": &"7",
@@ -108,7 +116,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_um37a")
+"texture": SubResource("AtlasTexture_kvkdo")
 }],
 "loop": false,
 "name": &"8",
@@ -230,9 +238,12 @@ animations = [{
 clip_children = 1
 sprite_frames = SubResource("SpriteFrames_mrt07")
 animation = &"0"
+offset = Vector2(0, -375)
 script = ExtResource("2_hqkx4")
 
 [node name="Outlines" type="AnimatedSprite2D" parent="."]
 top_level = true
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xggf3")
 animation = &"0"
+offset = Vector2(-15, -375)
