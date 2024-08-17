@@ -244,5 +244,5 @@ script = ExtResource("2_hqkx4")
 [node name="Outlines" type="AnimatedSprite2D" parent="."]
 top_level = true
 sprite_frames = SubResource("SpriteFrames_xggf3")
-animation = &"0"
+animation = &"4"
 offset = Vector2(-15, -375)

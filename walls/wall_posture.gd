@@ -21,7 +21,7 @@ func _physics_process(delta):
 func set_posture(new_posture : int):
 	posture.set_posture(new_posture)
 	posture_numDTO = ceil(new_posture/2.0)
-	posture_directionDTO = -1 if new_posture % 2 == 0 else 1
+	posture_directionDTO = 1 if new_posture % 2 == 0 else 2
 	
 func set_wall_and_posture_scale(new_scale : int):
 	posture.set_posture_scale(new_scale)
