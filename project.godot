@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://autoloaders/signal_bus.gd"
 Game="*res://autoloaders/game.gd"
+AudioManager="*res://audio/AudioManager.tscn"
 
 [display]
 
