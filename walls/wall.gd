@@ -8,7 +8,7 @@ var speed = 100
 func _ready():
 	area_entered.connect(on_area_entered)
 	
-func on_area_entered():
+func on_area_entered(_area):
 	SignalBus.wall_hit.emit(postureDTO)
 
 func _physics_process(delta):
