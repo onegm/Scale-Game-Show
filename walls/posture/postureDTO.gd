@@ -1,5 +1,5 @@
 extends Node
-class_name PostureDTO
+class_name PostureDTO #Data transfer object
 
 enum SIZE {SMALL, MEDIUM, LARGE}
 enum DIRECTION {CENTER, LEFT, RIGHT}

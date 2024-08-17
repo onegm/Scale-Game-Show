@@ -1,14 +1,11 @@
 extends Node2D
+class_name WallSpawner
 
-@onready var wall_posture_scene = load("res://walls/WallPosture.tscn")
-@onready var timer = $Timer
+@onready var wall_posture_scene = load("res://walls/Wall.tscn")
 @onready var rand = RandomNumberGenerator.new()
 
-@onready var posture_sequence : PostureSequence = Sequence1.new()
+@onready var posture_sequence : WallSequence = Sequence1.new()
 
-func _ready():
-	timer.timeout.connect(spawn_wall)
-	
 func spawn_wall():
 	if !posture_sequence.has_next():
 		return

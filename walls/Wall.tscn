@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvprlymwlmhan"]
+
+[ext_resource type="Script" path="res://walls/wall.gd" id="1_skayl"]
+[ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/posture/Posture.tscn" id="2_7uj5q"]
+[ext_resource type="Texture2D" uid="uid://bldld0uo8ocjq" path="res://walls/art/wall.png" id="3_rfxvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqmh"]
+size = Vector2(220, 690)
+
+[node name="Wall" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_skayl")
+
+[node name="Posture" parent="." instance=ExtResource("2_7uj5q")]
+
+[node name="Wall" type="Sprite2D" parent="Posture"]
+scale = Vector2(1.2, 1)
+texture = ExtResource("3_rfxvc")
+offset = Vector2(0, -340)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -335)
+shape = SubResource("RectangleShape2D_wwqmh")

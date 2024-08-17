@@ -1,5 +1,5 @@
 extends Node
-class_name PostureSequence
+class_name WallSequence
 
 var SIZE = PostureDTO.SIZE
 var DIRECTION = PostureDTO.DIRECTION

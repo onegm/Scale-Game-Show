@@ -1,12 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://c6y1dqx8ki7a7"]
 
+[ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
-[ext_resource type="PackedScene" path="res://walls/WallSpawner.tscn" id="2_iwfjl"]
 
 [node name="Level1" type="Node2D"]
-
-[node name="WallSpawner" parent="." instance=ExtResource("2_iwfjl")]
-position = Vector2(1134, 475)
+script = ExtResource("1_bx0cw")
+song_num = 1
 
 [node name="Player" parent="." instance=ExtResource("1_c3ycx")]
 position = Vector2(355, 475)
+
+[node name="WallSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1136, 478)

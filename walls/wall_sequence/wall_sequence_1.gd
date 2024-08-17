@@ -1,4 +1,4 @@
-extends PostureSequence
+extends WallSequence
 class_name Sequence1
 # Scale, direction, posture
 func _init():
