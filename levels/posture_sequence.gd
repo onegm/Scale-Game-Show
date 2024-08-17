@@ -12,4 +12,7 @@ func has_next() -> bool:
 
 func next() -> PostureDTO:
 	return sequence.pop_front()
+
+func add(postureDTO : PostureDTO):
+	sequence.append(postureDTO) 
 	

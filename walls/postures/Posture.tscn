@@ -237,12 +237,13 @@ animations = [{
 [node name="Posture" type="AnimatedSprite2D"]
 clip_children = 1
 sprite_frames = SubResource("SpriteFrames_mrt07")
-animation = &"8"
+animation = &"0"
 offset = Vector2(0, -375)
 script = ExtResource("2_hqkx4")
 
 [node name="Outlines" type="AnimatedSprite2D" parent="."]
 top_level = true
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_xggf3")
-animation = &"4"
-offset = Vector2(-15, -375)
+animation = &"0"
+offset = Vector2(0, -375)

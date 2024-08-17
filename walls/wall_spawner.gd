@@ -16,9 +16,10 @@ func spawn_wall():
 
 	var new_wall = wall_posture_scene.instantiate()
 	add_child(new_wall)
-	#new_wall.set_posture(rand.randi_range(0, 8))
-	#new_wall.set_wall_and_posture_scale(rand.randi_range(1, 3))
 	
-	new_wall.set_wall_and_posture_scale(next_posture.size + 1)
-	var posture_num = max(0, next_posture.posture*2 - (1 if next_posture.direction % 2 == 0 else 0))
-	new_wall.set_posture(posture_num)
+	new_wall.set_posture_from_DTO(next_posture)
+	
+func spawn_random_wall():
+	var new_wall = wall_posture_scene.instantiate()
+	add_child(new_wall)
+	new_wall.set_posture_from_DTO(PostureDTO.get_random())
