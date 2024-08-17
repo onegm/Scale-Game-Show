@@ -19,3 +19,11 @@ vframes = 2
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(-2.5, -64)
 shape = SubResource("RectangleShape2D_b0fiy")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -157.0
+offset_right = 47.0
+offset_bottom = -134.0
+text = "TEST POINTS"
+horizontal_alignment = 1

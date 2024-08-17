@@ -10,7 +10,7 @@ var speed = 100
 func _ready():
 	$Area2D.area_entered.connect(on_area_entered)
 	
-func on_area_entered(area):
+func on_area_entered(_area):
 	SignalBus.wall_hit.emit(Vector3(posture_scaleDTO, posture_directionDTO, posture_numDTO))
 
 func _physics_process(delta):

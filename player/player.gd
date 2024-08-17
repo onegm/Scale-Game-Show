@@ -26,10 +26,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 	$Sprite2D.frame = player_state.z
 
 func on_wall_hit(wall_pose : Vector3) -> void:
-	if wall_pose.x == player_state.x && wall_pose.y == player_state.y && wall_to_player(wall_pose.z) == player_state.z:
-		print("Nice fit")
+	if wall_pose.x == player_state.x && wall_pose.y == player_state.y && wall_to_player(int(wall_pose.z)) == player_state.z:
+		$Label.set_text("Nice fit")
 	else:
-		print("Ouch")
+		$Label.set_text("Ouch")
 
 func wall_to_player(wall_pose_num : int) -> int:
 	match wall_pose_num:
