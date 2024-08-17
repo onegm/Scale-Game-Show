@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvprlymwlmhan"]
+[gd_scene load_steps=5 format=3 uid="uid://cayp8m12c6l5w"]
 
 [ext_resource type="Script" path="res://walls/wall_posture.gd" id="1_yoqds"]
 [ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/postures/Posture.tscn" id="2_bdc4o"]
@@ -12,7 +12,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_yoqds")
 
 [node name="Posture" parent="." instance=ExtResource("2_bdc4o")]
-animation = &"2"
 
 [node name="Wall" type="Sprite2D" parent="Posture"]
 scale = Vector2(1.2, 1)
