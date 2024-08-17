@@ -33,6 +33,7 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 		combo_meter += 1
 		$PointsLabel.set_text(str(point_counter))
 		$ComboLabel.set_text(str("x", combo_meter))
+		$Anim.play("right_pose")
 	else:
 		combo_meter = 0
 		$ComboLabel.set_text(str("x", combo_meter))
