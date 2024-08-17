@@ -20,10 +20,18 @@ vframes = 2
 position = Vector2(-2.5, -64)
 shape = SubResource("RectangleShape2D_b0fiy")
 
-[node name="Label" type="Label" parent="."]
+[node name="PointsLabel" type="Label" parent="."]
 offset_left = -51.0
 offset_top = -157.0
 offset_right = 47.0
 offset_bottom = -134.0
 text = "TEST POINTS"
+horizontal_alignment = 1
+
+[node name="ComboLabel" type="Label" parent="."]
+offset_left = -51.0
+offset_top = -183.0
+offset_right = 47.0
+offset_bottom = -160.0
+text = "COMBO"
 horizontal_alignment = 1

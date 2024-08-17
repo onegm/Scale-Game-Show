@@ -2,6 +2,8 @@ extends Area2D
 
 # x: size , y: look_dir, z: pose_frame
 var player_state := Vector3(1, 0, 0)
+var point_counter : int = 0
+var combo_meter : int = 0
 
 func _ready() -> void:
 	SignalBus.wall_hit.connect(on_wall_hit)
@@ -25,11 +27,15 @@ func _unhandled_input(_event: InputEvent) -> void:
 	$Sprite2D.flip_h = (player_state.y == -1) 
 	$Sprite2D.frame = player_state.z
 
-func on_wall_hit(wall_pose : Vector3) -> void:
-	if wall_pose.x == player_state.x && wall_pose.y == player_state.y && wall_to_player(int(wall_pose.z)) == player_state.z:
-		$Label.set_text("Nice fit")
+func on_wall_hit(wall_pose : PostureDTO) -> void:
+	if wall_pose.size == (player_state.x + 1) && wall_pose.direction == abs(player_state.y) + (1 if player_state.y > 0 else 0) && wall_to_player(int(wall_pose.posture)) == player_state.z:
+		point_counter += 1
+		combo_meter += 1
+		$PointsLabel.set_text(str(point_counter))
+		$ComboLabel.set_text(str("x", combo_meter))
 	else:
-		$Label.set_text("Ouch")
+		combo_meter = 0
+		$ComboLabel.set_text(str("x", combo_meter))
 
 func wall_to_player(wall_pose_num : int) -> int:
 	match wall_pose_num:
