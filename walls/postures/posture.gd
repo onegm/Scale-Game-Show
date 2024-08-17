@@ -14,4 +14,4 @@ func set_posture(index : int):
 
 func set_posture_scale(new_scale : int):
 	scale = new_scale*SCALE_FACTOR
-	$Outlines.scale *= new_scale/3.0*SCALE_FACTOR
+	$Outlines.scale = scale/4.0
