@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bldld0uo8ocjq"
-path="res://.godot/imported/wall.png-fa78252665a48611d4a46404a2df6d50.ctex"
+uid="uid://cw2mpwny5akrn"
+path="res://.godot/imported/Pose 3 - Left White.png-efbacbd9d1b850fb71ea0b257e92db19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walls/wall.png"
-dest_files=["res://.godot/imported/wall.png-fa78252665a48611d4a46404a2df6d50.ctex"]
+source_file="res://walls/art/wall_holes/Pose 3 - Left White.png"
+dest_files=["res://.godot/imported/Pose 3 - Left White.png-efbacbd9d1b850fb71ea0b257e92db19.ctex"]
 
 [params]
 
