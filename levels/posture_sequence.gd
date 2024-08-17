@@ -1,9 +1,9 @@
 extends Node
 class_name PostureSequence
 
-enum SIZE {SMALL, MEDIUM, LARGE}
-enum DIRECTION {CENTER, LEFT, RIGHT}
-enum POSTURE {IDLE, WAVE, NINJA, BREAK, KNEEL}
+var SIZE = PostureDTO.SIZE
+var DIRECTION = PostureDTO.DIRECTION
+var POSTURE = PostureDTO.POSTURE
 
 @onready var sequence : Array = []
 
