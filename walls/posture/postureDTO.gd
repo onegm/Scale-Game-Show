@@ -24,3 +24,8 @@ static func get_random():
 		rand.randi_range(0, DIRECTION.size()-1),
 		rand.randi_range(0, POSTURE.size()-1)
 	)
+
+func equals(other : PostureDTO) -> bool:
+	if size == other.size and direction == other.direction and posture == other.posture:
+		return true
+	return false
