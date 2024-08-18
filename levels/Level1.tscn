@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
 
 [node name="Level1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_bx0cw")
 song_num = 1
 
@@ -11,4 +12,4 @@ song_num = 1
 position = Vector2(355, 475)
 
 [node name="WallSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(1136, 478)
+position = Vector2(1136, 474)
