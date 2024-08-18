@@ -90,17 +90,17 @@ shape = SubResource("RectangleShape2D_b0fiy")
 
 [node name="PointsLabel" type="Label" parent="."]
 offset_left = -51.0
-offset_top = -157.0
+offset_top = -205.0
 offset_right = 47.0
-offset_bottom = -134.0
+offset_bottom = -182.0
 text = "TEST POINTS"
 horizontal_alignment = 1
 
 [node name="ComboLabel" type="Label" parent="."]
 offset_left = -51.0
-offset_top = -183.0
+offset_top = -231.0
 offset_right = 47.0
-offset_bottom = -160.0
+offset_bottom = -208.0
 text = "COMBO"
 horizontal_alignment = 1
 

@@ -11,12 +11,12 @@ func _ready() -> void:
 	MainAudioSlider.value = local_settings["MainAudioVolume"]
 
 func move_up():
-	var tween = get_tree().create_tween()
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", Vector2(0, 0), 0.8)
 
 func move_down():
-	var tween = get_tree().create_tween()
+	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", Vector2(0, 720), 0.8)
 

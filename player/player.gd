@@ -43,14 +43,14 @@ func _unhandled_input(_event: InputEvent) -> void:
 	last_pose = int(player_state.z)
 
 func on_wall_hit(wall_pose : PostureDTO) -> void:
-	if last_pose_timer < 200:
+	if last_pose_timer < 50:
 		score = "Perfect"
-	elif last_pose_timer < 400:
+	elif last_pose_timer < 100:
 		score = "Great"
 	else:
 		score = "Normal"
 	
-	if wall_pose.size == (player_state.x + 1) && wall_pose.direction == abs(player_state.y) + (1 if player_state.y > 0 else 0) && wall_pose.posture == player_state.z:
+	if wall_pose.size == (player_state.x + 1) && wall_pose.direction == abs(player_state.y) + (1 if player_state.y > 0 else 0) && wall_pose.posture == player_state.z+1:
 		point_counter += 1
 		combo_meter += 1
 		$PointsLabel.set_text(score)
@@ -65,6 +65,7 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 func pose_hit():
 	last_pose_timer = 0
 
+# IDLE, READY, POINT, WAVE, FIGHT, CROUCH
 func num_to_file(pose_num : int) -> String:
 	match pose_num:
 		1:
