@@ -1,7 +1,6 @@
 extends Area2D
 
-# x: size , y: look_dir, z: pose
-var player_state := Vector3i(1, 0, 0)
+var player_state := PostureDTO.new(PostureDTO.SIZE.MEDIUM,PostureDTO.DIRECTION.CENTER,PostureDTO.POSTURE.IDLE)
 var point_counter : int = 0
 var combo_meter : int = 0
 var last_pose_timer : int = -1
@@ -12,50 +11,53 @@ func _ready() -> void:
 	SignalBus.wall_hit.connect(on_wall_hit)
 
 func _physics_process(_delta: float) -> void:
-	$ComboLabel.set_text(str(last_pose_timer))
-	if last_pose_timer == -1 || last_pose_timer > 999:
+	#$ComboLabel.set_text(str(last_pose_timer))
+	if last_pose_timer == -1 || last_pose_timer >= 500:
 		return
 	last_pose_timer += 1
 
 func _unhandled_input(_event: InputEvent) -> void:
-	var ready_pose := false
-	player_state.x = int(Input.get_axis("size_down", "size_up"))
-	player_state.y = int(Input.get_axis("look_left", "look_right"))
-	player_state.z = 0
+	var size_input := int(Input.get_axis("size_down", "size_up"))
+	var dir_input := int(Input.get_axis("look_left", "look_right"))
+	player_state.posture = PostureDTO.POSTURE.IDLE
 	
-	if player_state.y != 0:
+	if dir_input != 0:
 		if Input.is_action_pressed("pose_down"):
-			player_state.z = 4
+			player_state.posture = PostureDTO.POSTURE.CROUCH
 		if Input.is_action_pressed("pose_up"):
-			player_state.z = 1
+			player_state.posture = PostureDTO.POSTURE.POINT
 		if Input.is_action_pressed("pose_left"):
-			player_state.z = 2
+			player_state.posture = PostureDTO.POSTURE.WAVE
 		if Input.is_action_pressed("pose_right"):
-			player_state.z = 3
-		if last_pose != player_state.z:
+			player_state.posture = PostureDTO.POSTURE.FIGHT
+		
+		if player_state.posture == PostureDTO.POSTURE.IDLE:
+			player_state.posture = PostureDTO.POSTURE.READY
+		if last_pose != player_state.posture:
 			pose_hit()
-		if player_state.z == 0:
-			ready_pose = true
 	
-	scale = Vector2(1 + (0.5 * player_state.x), 1 + (0.5 * player_state.x))
-	$Sprite2D.flip_h = (player_state.y != -1)
-	$Sprite2D.texture = load("res://player/%s.png" % num_to_file(player_state.z)) if !ready_pose else load("res://player/Ready.png")
-	last_pose = int(player_state.z)
+	scale = Vector2(1 + (0.35 * size_input), 1 + (0.35 * size_input))
+	$Sprite2D.flip_h = (dir_input != -1)
+	$Sprite2D.texture = load("res://player/%s.png" % num_to_file(player_state.posture))
+	last_pose = int(player_state.posture)
+	
+	player_state.size = (size_input + 1) as PostureDTO.SIZE
+	player_state.direction = abs(dir_input) + (1 if dir_input > 0 else 0)
 
 func on_wall_hit(wall_pose : PostureDTO) -> void:
-	if last_pose_timer < 50:
+	if last_pose_timer <= 50:
 		score = "Perfect"
-	elif last_pose_timer < 100:
+	elif last_pose_timer <= 100:
 		score = "Great"
 	else:
 		score = "Normal"
 	
-	if wall_pose.size == (player_state.x + 1) && wall_pose.direction == abs(player_state.y) + (1 if player_state.y > 0 else 0) && wall_pose.posture == player_state.z+1:
+	if wall_pose.equals(player_state):
 		point_counter += 1
 		combo_meter += 1
-		$PointsLabel.set_text(score)
-		#$PointsLabel.set_text(str(point_counter))
-		#$ComboLabel.set_text(str("x", combo_meter))
+		$TimingLabel.set_text(score)
+		$PointsLabel.set_text(str(point_counter))
+		$ComboLabel.set_text(str("x", combo_meter))
 		$Anim.play("right_pose")
 	else:
 		$PointsLabel.set_text("Miss")
@@ -65,15 +67,16 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 func pose_hit():
 	last_pose_timer = 0
 
-# IDLE, READY, POINT, WAVE, FIGHT, CROUCH
 func num_to_file(pose_num : int) -> String:
 	match pose_num:
-		1:
-			return "Point"
-		2:
-			return "Wave"
-		3:
-			return "Fight"
-		4:
+		PostureDTO.POSTURE.CROUCH:
 			return "Crouch"
+		PostureDTO.POSTURE.POINT:
+			return "Point"
+		PostureDTO.POSTURE.WAVE:
+			return "Wave"
+		PostureDTO.POSTURE.FIGHT:
+			return "Fight"
+		PostureDTO.POSTURE.READY:
+			return "Ready"
 	return "Idle"

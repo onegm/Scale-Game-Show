@@ -21,3 +21,7 @@ func _on_settings_btn_pressed() -> void:
 func _on_close_btn_pressed() -> void:
 	get_tree().paused = false
 	move_down()
+
+func _on_exit_btn_pressed() -> void:
+	get_tree().paused = false
+	get_tree().call_deferred("change_scene_to_file", "res://UI/main_menu/menu_screen.tscn")

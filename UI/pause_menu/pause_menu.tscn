@@ -40,7 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 25
 alignment = 1
 
 [node name="PauseLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
@@ -50,6 +50,14 @@ text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
 [node name="SettingsBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -58,18 +66,19 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
-[node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="ExitBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 50
-text = "Close"
+text = "Exit"
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_3ctr5")]
 layout_mode = 1
 offset_top = 720.0
 offset_bottom = 720.0
 
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]

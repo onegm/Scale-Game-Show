@@ -69,7 +69,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 50
-text = "Close"
+text = "Back"
 
 [connection signal="drag_ended" from="CenterContainer/Panel/VBoxContainer/MainAudioSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
