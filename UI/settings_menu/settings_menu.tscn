@@ -14,8 +14,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 720.0
-offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fa30v")
@@ -43,14 +41,14 @@ grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="SettingsLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="MainAudioLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Main Audio"
@@ -62,7 +60,8 @@ custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-max_value = 80.0
+max_value = 1.0
+step = 0.05
 
 [node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)

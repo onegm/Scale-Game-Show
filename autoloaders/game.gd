@@ -1,7 +1,7 @@
 extends Node
 
 var settings := {
-	"MainAudioVolume" : 80
+	"MainAudioVolume" : 1
 }
 var main_scene_path = "res://levels/Level1.tscn"
 
