@@ -40,7 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 200
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Label" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
@@ -50,6 +50,20 @@ text = "SETTINGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Label2" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Main Audio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainAudioSlider" type="HSlider" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 80.0
+
 [node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -58,4 +72,5 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 50
 text = "Close"
 
+[connection signal="drag_ended" from="CenterContainer/Panel/VBoxContainer/MainAudioSlider" to="." method="_on_h_slider_drag_ended"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/CloseBtn" to="." method="_on_close_btn_pressed"]
