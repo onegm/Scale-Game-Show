@@ -6,13 +6,14 @@ class_name WallSpawner
 
 @onready var posture_sequence : WallSequence = Sequence1.new()
 
-func spawn_wall():
+func spawn_wall(spawn_position : Vector2):
 	if !posture_sequence.has_next():
 		return
 	var next_posture = posture_sequence.next();
 
 	var new_wall = wall_posture_scene.instantiate()
-	add_child(new_wall)
+	add_sibling(new_wall)
+	new_wall.global_position = spawn_position
 	
 	new_wall.set_posture_from_DTO(next_posture)
 	
