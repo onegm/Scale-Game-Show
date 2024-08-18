@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oji6kf0fc6q4"
-path="res://.godot/imported/Pose 2 - Left White.png-7196df98fedcb798147241e83e3a1776.ctex"
+uid="uid://cbu2f6fe1063e"
+path="res://.godot/imported/Fight.png-729922073e76700b9a807e127e2d73f4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walls/art/wall_holes/Pose 2 - Left White.png"
-dest_files=["res://.godot/imported/Pose 2 - Left White.png-7196df98fedcb798147241e83e3a1776.ctex"]
+source_file="res://player/Fight.png"
+dest_files=["res://.godot/imported/Fight.png-729922073e76700b9a807e127e2d73f4.ctex"]
 
 [params]
 

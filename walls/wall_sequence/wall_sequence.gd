@@ -1,9 +1,9 @@
 extends Node
 class_name WallSequence
 
-var SIZE = PostureDTO.SIZE
-var DIRECTION = PostureDTO.DIRECTION
-var POSTURE = PostureDTO.POSTURE
+var SIZE := PostureDTO.SIZE
+var DIRECTION := PostureDTO.DIRECTION
+var POSTURE := PostureDTO.POSTURE
 
 @onready var sequence : Array = []
 

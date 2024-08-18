@@ -21,9 +21,10 @@ func _physics_process(delta):
 func set_posture_from_DTO(new_posture : PostureDTO):
 	postureDTO = new_posture
 	set_wall_and_posture_scale(postureDTO.size + 1)
+	posture.set_posture(postureDTO.posture, postureDTO.direction == postureDTO.DIRECTION.RIGHT)
+
 	var posture_num = max(0, postureDTO.posture*2 - (1 if postureDTO.direction % 2 == 0 else 0))
-	posture.set_posture(posture_num)
-	outlines.play(str(posture_num))
+	outlines.play(str(min(8, posture_num)))
 	
 func set_wall_and_posture_scale(new_scale : int):
 	posture.set_posture_scale(new_scale)

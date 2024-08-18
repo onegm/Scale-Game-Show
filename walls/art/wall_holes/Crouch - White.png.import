@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdr734u22gmn0"
-path="res://.godot/imported/Pose 3 - Right White.png-c1064b6988f0284be1b165289a29f691.ctex"
+uid="uid://qhbah4ttb3wj"
+path="res://.godot/imported/Crouch - White.png-f4f15ed09e31dd0baa6842a8b45c5b56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walls/art/wall_holes/Pose 3 - Right White.png"
-dest_files=["res://.godot/imported/Pose 3 - Right White.png-c1064b6988f0284be1b165289a29f691.ctex"]
+source_file="res://walls/art/wall_holes/Crouch - White.png"
+dest_files=["res://.godot/imported/Crouch - White.png-f4f15ed09e31dd0baa6842a8b45c5b56.ctex"]
 
 [params]
 

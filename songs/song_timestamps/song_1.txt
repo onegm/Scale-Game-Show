@@ -4,6 +4,7 @@ res://audio/music/130bpmGenericLoop.mp3
 5.2
 10
 15.3
-25
+18
+20
 
 end

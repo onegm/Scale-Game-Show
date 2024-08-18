@@ -1,9 +1,8 @@
 extends AnimatedSprite2D
 
-var SCALE_FACTOR = Vector2.ONE
-
-func set_posture(index : int):
+func set_posture(index : int, flipped : bool):
+	flip_h = flipped
 	play(str(index))
 
 func set_posture_scale(new_scale : int):
-	scale = new_scale*SCALE_FACTOR
+	scale = new_scale*Vector2.ONE

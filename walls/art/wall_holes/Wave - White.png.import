@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi5ryr80lfuhx"
-path="res://.godot/imported/Pose 2 - Right White.png-f8997e156f36257d39f2e893f2a85bee.ctex"
+uid="uid://72tk1iv8fqs4"
+path="res://.godot/imported/Wave - White.png-d721c1421f801e8861f04221f0a66230.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walls/art/wall_holes/Pose 2 - Right White.png"
-dest_files=["res://.godot/imported/Pose 2 - Right White.png-f8997e156f36257d39f2e893f2a85bee.ctex"]
+source_file="res://walls/art/wall_holes/Wave - White.png"
+dest_files=["res://.godot/imported/Wave - White.png-d721c1421f801e8861f04221f0a66230.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@ class_name PostureDTO #Data transfer object
 
 enum SIZE {SMALL, MEDIUM, LARGE}
 enum DIRECTION {CENTER, LEFT, RIGHT}
-enum POSTURE {IDLE, WAVE, NINJA, BREAK, KNEEL}
+enum POSTURE {IDLE, READY, POINT, WAVE, FIGHT, CROUCH}
 
 var size : SIZE
 var direction : DIRECTION
