@@ -5,7 +5,7 @@ extends Area2D
 @onready var wall = $Posture/Wall
 
 var postureDTO : PostureDTO
-var speed = 100
+var speed = Game.WALL_SPEED
 
 func _ready():
 	area_entered.connect(on_area_entered)
