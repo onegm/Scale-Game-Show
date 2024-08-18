@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bmrollmi4tdrv"]
+[gd_scene load_steps=7 format=3 uid="uid://bmrollmi4tdrv"]
 
 [ext_resource type="Script" path="res://UI/GUI/gui.gd" id="1_7kdd7"]
 [ext_resource type="Texture2D" uid="uid://bigqxwq7d1nm3" path="res://UI/Elements/WASD HUD element.png" id="2_8dtj7"]
@@ -7,6 +7,10 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_of4ji"]
 atlas = ExtResource("2_8dtj7")
 region = Rect2(0, 400, 470, 470)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x7o1"]
+atlas = ExtResource("2_8dtj7")
+region = Rect2(467, 75, 190, 880)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbrco"]
 atlas = ExtResource("2_8dtj7")
@@ -60,31 +64,37 @@ horizontal_alignment = 1
 
 [node name="LowContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 600
 alignment = 2
 
-[node name="LeftDirRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
-visible = false
-custom_minimum_size = Vector2(300, 300)
+[node name="SizeDirContainer" type="HBoxContainer" parent="VBoxContainer/LowContainer"]
 layout_mode = 2
+
+[node name="LeftDirRect" type="TextureRect" parent="VBoxContainer/LowContainer/SizeDirContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = SubResource("AtlasTexture_of4ji")
 expand_mode = 1
 
-[node name="SizeRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
-visible = false
-custom_minimum_size = Vector2(300, 300)
+[node name="SizeRect" type="TextureRect" parent="VBoxContainer/LowContainer/SizeDirContainer"]
+custom_minimum_size = Vector2(65, 275)
 layout_mode = 2
-texture = ExtResource("2_8dtj7")
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_7x7o1")
 expand_mode = 1
 
-[node name="RightDirRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
-visible = false
-custom_minimum_size = Vector2(300, 300)
+[node name="RightDirRect" type="TextureRect" parent="VBoxContainer/LowContainer/SizeDirContainer"]
+custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
+size_flags_vertical = 4
 texture = SubResource("AtlasTexture_rbrco")
 expand_mode = 1
 
 [node name="PosesRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+size_flags_vertical = 8
 texture = ExtResource("7_pnrr0")
 expand_mode = 1
