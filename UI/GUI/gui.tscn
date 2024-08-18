@@ -1,57 +1,16 @@
-[gd_scene load_steps=12 format=3 uid="uid://bmrollmi4tdrv"]
+[gd_scene load_steps=6 format=3 uid="uid://bmrollmi4tdrv"]
 
 [ext_resource type="Script" path="res://UI/GUI/gui.gd" id="1_7kdd7"]
-[ext_resource type="Shader" path="res://UI/GUI/outline.gdshader" id="1_p8htn"]
-[ext_resource type="Texture2D" uid="uid://bp83h0jcj4asv" path="res://player/Wave.png" id="2_bilfu"]
-[ext_resource type="Texture2D" uid="uid://dxk2uyogtj8jh" path="res://player/Point.png" id="3_250d6"]
-[ext_resource type="Texture2D" uid="uid://cwrgtpdhru3sw" path="res://player/Crouch.png" id="4_fc1lf"]
-[ext_resource type="Texture2D" uid="uid://cbu2f6fe1063e" path="res://player/Fight.png" id="5_b6k44"]
+[ext_resource type="Texture2D" uid="uid://d2iji0gsfyioe" path="res://UI/Elements/WASD HUD element.png" id="2_8dtj7"]
+[ext_resource type="Texture2D" uid="uid://dave7v3x0bl4s" path="res://UI/Elements/Arrow Keys HUD element.png" id="7_pnrr0"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ml31y"]
-shader = ExtResource("1_p8htn")
-shader_parameter/line_width = 20.0
-shader_parameter/outline_color = Vector4(1, 1, 0, 0)
+[sub_resource type="AtlasTexture" id="AtlasTexture_of4ji"]
+atlas = ExtResource("2_8dtj7")
+region = Rect2(0, 400, 470, 470)
 
-[sub_resource type="Shader" id="Shader_nc6lw"]
-code = "shader_type canvas_item;
-
-const int angRes = 8;
-
-uniform float line_width = 10.0;
-uniform vec4 outline_color = vec4(1, 1, 0, 1);
-
-void fragment() {
-	float alpha = 0.0;
-	vec2 scale = TEXTURE_PIXEL_SIZE;
-	
-	for (int i = 0; i < angRes; i ++) {
-		float angle = 2.0 * PI * float(i) / float(angRes);
-		vec2 disp = scale * line_width * vec2(cos(angle), sin(angle));
-		alpha += texture(TEXTURE, UV + disp).a;
-	}
-	
-	if (alpha > 0.0 && texture(TEXTURE, UV).a <= 0.2) {
-		COLOR = outline_color;
-	} else {
-		COLOR = texture(TEXTURE, UV);
-	}
-}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkmad"]
-shader = SubResource("Shader_nc6lw")
-shader_parameter/line_width = 20.0
-shader_parameter/outline_color = Vector4(1, 1, 0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qi7j1"]
-shader = SubResource("Shader_nc6lw")
-shader_parameter/line_width = 20.0
-shader_parameter/outline_color = Vector4(1, 1, 0, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o75iv"]
-shader = SubResource("Shader_nc6lw")
-shader_parameter/line_width = 20.0
-shader_parameter/outline_color = Vector4(1, 1, 0, 0)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbrco"]
+atlas = ExtResource("2_8dtj7")
+region = Rect2(630, 400, 470, 470)
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -69,7 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 300
+theme_override_constants/separation = 350
 alignment = 1
 
 [node name="HighContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -101,45 +60,31 @@ horizontal_alignment = 1
 
 [node name="LowContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 500
 alignment = 2
 
-[node name="PosesContainer" type="HBoxContainer" parent="VBoxContainer/LowContainer"]
+[node name="LeftDirRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-
-[node name="LeftPoseRect" type="TextureRect" parent="VBoxContainer/LowContainer/PosesContainer"]
-material = SubResource("ShaderMaterial_ml31y")
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("2_bilfu")
+texture = SubResource("AtlasTexture_of4ji")
 expand_mode = 1
-flip_h = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/LowContainer/PosesContainer"]
+[node name="SizeRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-
-[node name="UpPoseRect" type="TextureRect" parent="VBoxContainer/LowContainer/PosesContainer/VBoxContainer"]
-material = SubResource("ShaderMaterial_gkmad")
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-texture = ExtResource("3_250d6")
+texture = ExtResource("2_8dtj7")
 expand_mode = 1
-flip_h = true
 
-[node name="DownPoseRect" type="TextureRect" parent="VBoxContainer/LowContainer/PosesContainer/VBoxContainer"]
-material = SubResource("ShaderMaterial_qi7j1")
-custom_minimum_size = Vector2(150, 150)
+[node name="RightDirRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
+visible = false
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-texture = ExtResource("4_fc1lf")
+texture = SubResource("AtlasTexture_rbrco")
 expand_mode = 1
-flip_h = true
 
-[node name="RightPoseRect" type="TextureRect" parent="VBoxContainer/LowContainer/PosesContainer"]
-material = SubResource("ShaderMaterial_o75iv")
-custom_minimum_size = Vector2(150, 150)
+[node name="PosesRect" type="TextureRect" parent="VBoxContainer/LowContainer"]
+custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("5_b6k44")
+texture = ExtResource("7_pnrr0")
 expand_mode = 1
-flip_h = true

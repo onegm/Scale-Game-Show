@@ -2,10 +2,10 @@ extends Control
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause_game") && !get_tree().paused:
-		get_tree().paused = true
 		move_up()
 
 func move_up():
+	get_tree().paused = true
 	var tween = get_tree().create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", Vector2(0, 0), 0.8)

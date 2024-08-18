@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc838hd7f3grk"]
+[gd_scene load_steps=6 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
+[ext_resource type="Texture2D" uid="uid://bjh215te32wci" path="res://UI/Elements/Play Button HUD element.png" id="2_fxysb"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
+[ext_resource type="Texture2D" uid="uid://cy15krhasa4vx" path="res://UI/Elements/Settings Button HUD element.png" id="3_twsxa"]
+[ext_resource type="Texture2D" uid="uid://whouqq7t6ovp" path="res://UI/Elements/Quit Button HUD element.png" id="4_uy6kd"]
 
 [node name="MenuScreen" type="Control"]
 layout_mode = 3
@@ -23,7 +26,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 2
-theme_override_constants/separation = 50
+theme_override_constants/separation = 30
 alignment = 1
 
 [node name="GameName" type="RichTextLabel" parent="MainMenu/VBoxContainer"]
@@ -34,29 +37,32 @@ text = "[wave amp=60]SCALE GAME SHOW"
 fit_content = true
 autowrap_mode = 0
 
-[node name="StartBtn" type="Button" parent="MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="StartBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Play"
+texture_normal = ExtResource("2_fxysb")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="SettingsBtn" type="Button" parent="MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="SettingsBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Settings"
+texture_normal = ExtResource("3_twsxa")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="QuitBtn" type="Button" parent="MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="QuitBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Quit"
+texture_normal = ExtResource("4_uy6kd")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_ml36l")]
 layout_mode = 1
