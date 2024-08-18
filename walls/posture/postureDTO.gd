@@ -30,3 +30,11 @@ func equals(other : PostureDTO) -> bool:
 	if size == other.size and direction == other.direction and posture == other.posture:
 		return true
 	return false
+
+func _to_string():
+	var result = "{\n"
+	result += "\tPosture: " + POSTURE.keys()[posture] + "\n"
+	result += "\tSize: " + SIZE.keys()[size] + "\n"
+	result += "\tDirection: " + DIRECTION.keys()[direction] + "\n"
+	result += "}"
+	return result

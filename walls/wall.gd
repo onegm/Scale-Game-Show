@@ -8,9 +8,9 @@ var postureDTO : PostureDTO
 var speed = Game.WALL_SPEED
 
 func _ready():
-	area_entered.connect(on_area_entered)
+	area_exited.connect(on_area_exited)
 	
-func on_area_entered(_area):
+func on_area_exited(_area):
 	SignalBus.wall_hit.emit(postureDTO)
 	z_index += 1
 
@@ -33,3 +33,4 @@ func set_wall_and_posture_scale(new_scale : float):
 	posture.set_posture_scale(new_scale)
 	wall.scale /= new_scale
 	outlines.scale = Vector2.ONE*new_scale
+
