@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var posture = $Posture
 @onready var outlines = $Outlines
+@onready var wall = $Posture/Wall
 
 var postureDTO : PostureDTO
 var speed = 100
@@ -19,14 +20,16 @@ func _physics_process(delta):
 		queue_free()
 
 func set_posture_from_DTO(new_posture : PostureDTO):
+	assert(new_posture.posture in PostureDTO.wall_postures, "Invalid wall posture choice: " + str(new_posture.posture))
 	postureDTO = new_posture
-	set_wall_and_posture_scale(postureDTO.size + 1)
+	set_wall_and_posture_scale(postureDTO.size)
 	posture.set_posture(postureDTO.posture, postureDTO.direction == postureDTO.DIRECTION.RIGHT)
-
-	var posture_num = max(0, postureDTO.posture*2 - (1 if postureDTO.direction % 2 == 0 else 0))
-	outlines.play(str(min(8, posture_num)))
 	
-func set_wall_and_posture_scale(new_scale : int):
+	var posture_num = (postureDTO.posture + PostureDTO.wall_postures.size()) if postureDTO.direction == postureDTO.DIRECTION.RIGHT else postureDTO.posture
+	outlines.play(str(posture_num))
+	
+func set_wall_and_posture_scale(new_scale : float):
+	new_scale = (new_scale + 2.0)/1.5
 	posture.set_posture_scale(new_scale)
-	$Posture/Wall.scale /= new_scale
-	outlines.scale = (Vector2.ONE/4.0)*new_scale
+	wall.scale /= new_scale
+	outlines.scale = Vector2.ONE*new_scale

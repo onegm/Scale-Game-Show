@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdkfpce136suy"
-path="res://.godot/imported/outlines.png-7cf663979f4503aa565796164e3be26b.ctex"
+uid="uid://5u37gjrj4ddm"
+path="res://.godot/imported/Crouch Cutout Left.png-597962a48798c82e2219a051ad7bb243.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walls/art/outlines.png"
-dest_files=["res://.godot/imported/outlines.png-7cf663979f4503aa565796164e3be26b.ctex"]
+source_file="res://walls/art/outlines/Crouch Cutout Left.png"
+dest_files=["res://.godot/imported/Crouch Cutout Left.png-597962a48798c82e2219a051ad7bb243.ctex"]
 
 [params]
 

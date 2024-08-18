@@ -29,7 +29,7 @@ func _ready():
 			time_sequence.append(float(next_line))
 		next_line = song_sequence_file.get_line()
 		counter += 1
-		if counter > 100 : break
+		if counter > 1000 : break
 	
 	add_timers()
 

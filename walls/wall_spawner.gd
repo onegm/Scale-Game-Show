@@ -27,4 +27,4 @@ func spawn_random_wall(spawn_position : Vector2):
 	var new_wall = wall_scene.instantiate()
 	add_sibling(new_wall)
 	new_wall.global_position = spawn_position
-	new_wall.set_posture_from_DTO(PostureDTO.get_random())
+	new_wall.set_posture_from_DTO(PostureDTO.get_random_wall())
