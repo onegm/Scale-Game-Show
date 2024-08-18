@@ -4,16 +4,18 @@ class_name WallSpawner
 @onready var wall_scene = load("res://walls/Wall.tscn")
 @onready var rand = RandomNumberGenerator.new()
 
-var posture_sequence : WallSequence
-var posture_sequence_path = "res://walls/wall_sequence/wall_sequence_"
+var wall_sequence : WallSequence
+var wall_sequence_path = "res://walls/wall_sequence/wall_sequence_"
 
 func _init(sequence_num : int):
-	posture_sequence = load(posture_sequence_path + str(sequence_num) + ".gd").new()
+	wall_sequence_path += str(sequence_num) + ".gd"
+	assert(ResourceLoader.exists(wall_sequence_path), "RESOURCE NOT FOUND: " + wall_sequence_path)
+	wall_sequence = load(wall_sequence_path).new()
 
 func spawn_wall(spawn_position : Vector2):
-	if !posture_sequence.has_next():
+	if !wall_sequence.has_next():
 		return
-	var next_posture = posture_sequence.next();
+	var next_posture = wall_sequence.next();
 
 	var new_wall = wall_scene.instantiate()
 	add_sibling(new_wall)
