@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_53jny"]
 [ext_resource type="Shader" path="res://player/outline_effect.gdshader" id="2_s4fgc"]
-[ext_resource type="Texture2D" uid="uid://cvi0qdiyfgswi" path="res://player/Idle.png" id="4_7uhqf"]
+[ext_resource type="Texture2D" uid="uid://dntnqwwqx40yx" path="res://player/Idle.png" id="4_7uhqf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lhoqo"]
 shader = ExtResource("2_s4fgc")
