@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmrollmi4tdrv"]
 
 [ext_resource type="Script" path="res://UI/GUI/gui.gd" id="1_7kdd7"]
-[ext_resource type="Texture2D" uid="uid://d2iji0gsfyioe" path="res://UI/Elements/WASD HUD element.png" id="2_8dtj7"]
-[ext_resource type="Texture2D" uid="uid://dave7v3x0bl4s" path="res://UI/Elements/Arrow Keys HUD element.png" id="7_pnrr0"]
+[ext_resource type="Texture2D" uid="uid://bigqxwq7d1nm3" path="res://UI/Elements/WASD HUD element.png" id="2_8dtj7"]
+[ext_resource type="Texture2D" uid="uid://cbm4lxyb8jlj3" path="res://UI/Elements/Arrow Keys HUD element.png" id="7_pnrr0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_of4ji"]
 atlas = ExtResource("2_8dtj7")
