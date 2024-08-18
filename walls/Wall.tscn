@@ -1,0 +1,103 @@
+[gd_scene load_steps=14 format=3 uid="uid://cvprlymwlmhan"]
+
+[ext_resource type="Script" path="res://walls/wall.gd" id="1_skayl"]
+[ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/posture/Posture.tscn" id="2_7uj5q"]
+[ext_resource type="Texture2D" uid="uid://bldld0uo8ocjq" path="res://walls/art/wall.png" id="3_rfxvc"]
+[ext_resource type="Texture2D" uid="uid://dbr65rhf52o7e" path="res://walls/art/outlines/Crouch Cutout Right.png" id="4_dxtw0"]
+[ext_resource type="Texture2D" uid="uid://fi0eattgvtci" path="res://walls/art/outlines/Point Cutout Left.png" id="4_hixfj"]
+[ext_resource type="Texture2D" uid="uid://8urnmlhh2gdu" path="res://walls/art/outlines/Wave Cutout Left.png" id="5_m0uip"]
+[ext_resource type="Texture2D" uid="uid://kfepw8xarydw" path="res://walls/art/outlines/Fight Cutout Left.png" id="6_hikeu"]
+[ext_resource type="Texture2D" uid="uid://5u37gjrj4ddm" path="res://walls/art/outlines/Crouch Cutout Left.png" id="7_xyo8x"]
+[ext_resource type="Texture2D" uid="uid://bgpo55hdryvjs" path="res://walls/art/outlines/Point Cutout Right.png" id="8_hqnop"]
+[ext_resource type="Texture2D" uid="uid://d3lew8jcbcgr8" path="res://walls/art/outlines/Wave Cutout Right.png" id="9_4xlcj"]
+[ext_resource type="Texture2D" uid="uid://b6ba1j03g4tr3" path="res://walls/art/outlines/Fight Cutout Right.png" id="10_v44wy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqmh"]
+size = Vector2(26, 690)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wrvex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hixfj")
+}],
+"loop": false,
+"name": &"2",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_m0uip")
+}],
+"loop": false,
+"name": &"3",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_hikeu")
+}],
+"loop": false,
+"name": &"4",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_xyo8x")
+}],
+"loop": false,
+"name": &"5",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hqnop")
+}],
+"loop": false,
+"name": &"6",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4xlcj")
+}],
+"loop": false,
+"name": &"7",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_v44wy")
+}],
+"loop": true,
+"name": &"8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_dxtw0")
+}],
+"loop": true,
+"name": &"9",
+"speed": 5.0
+}]
+
+[node name="Wall" type="Area2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_skayl")
+
+[node name="Posture" parent="." instance=ExtResource("2_7uj5q")]
+
+[node name="Wall" type="Sprite2D" parent="Posture"]
+scale = Vector2(1.2, 1)
+texture = ExtResource("3_rfxvc")
+offset = Vector2(0, -340)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, -344)
+shape = SubResource("RectangleShape2D_wwqmh")
+
+[node name="Outlines" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wrvex")
+animation = &"8"
+offset = Vector2(0, -375)

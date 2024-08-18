@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5bg2p28cloq2"]
+
+[ext_resource type="Texture2D" uid="uid://dth8yjod74w8r" path="res://levels/screenshot test.png" id="1_kdslq"]
+
+[node name="LevelBackground" type="Node2D"]
+
+[node name="Floor" type="Polygon2D" parent="."]
+position = Vector2(650, 516)
+scale = Vector2(0.3, 0.3)
+offset = Vector2(-2250, -2900)
+texture = ExtResource("1_kdslq")
+polygon = PackedVector2Array(746.429, 2666.67, 807.143, 2675, 889.286, 2675, 992.857, 2675, 1133.33, 2670.24, 1152.38, 2679.76, 1208.33, 2677.38, 1311.9, 2673.81, 3591.67, 2667.86, 3596.43, 3184.52, 747.619, 3185.71)
+uv = PackedVector2Array(746.429, 2666.67, 807.143, 2675, 889.286, 2675, 992.857, 2675, 1133.33, 2670.24, 1152.38, 2679.76, 1208.33, 2677.38, 1311.9, 2673.81, 3591.67, 2667.86, 3596.43, 3184.52, 747.619, 3185.71)
+
+[node name="Crowd1" type="Polygon2D" parent="."]
+position = Vector2(784, 229)
+scale = Vector2(0.5, 0.5)
+offset = Vector2(-1100, -1200)
+texture = ExtResource("1_kdslq")
+polygon = PackedVector2Array(632.498, 1371.07, 1613.45, 1377.42, 1611.86, 1048.85, 597.578, 1040.92)
+uv = PackedVector2Array(632.498, 1371.07, 1613.45, 1377.42, 1611.86, 1048.85, 597.578, 1040.92)

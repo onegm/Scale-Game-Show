@@ -1,12 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6y1dqx8ki7a7"]
+[gd_scene load_steps=6 format=3 uid="uid://c6y1dqx8ki7a7"]
 
+[ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
-[ext_resource type="PackedScene" uid="uid://cohl4mpj0lg13" path="res://walls/WallSpawner.tscn" id="2_iwfjl"]
+[ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
+[ext_resource type="PackedScene" uid="uid://c1wjv5t2mij27" path="res://UI/pause_menu/pause_menu.tscn" id="4_gf4vr"]
+[ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
 
 [node name="Level1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bx0cw")
+song_num = 2
+wall_sequence_num = 1
+
+[node name="LevelBackground" parent="." instance=ExtResource("2_qthyg")]
+
+[node name="WallSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1136, 475)
 
 [node name="Player" parent="." instance=ExtResource("1_c3ycx")]
-position = Vector2(355, 279)
+position = Vector2(355, 475)
 
-[node name="WallSpawner" parent="." instance=ExtResource("2_iwfjl")]
-position = Vector2(1078, 284)
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("4_gf4vr")]
+offset_top = 720.0
+offset_bottom = 720.0
+
+[node name="GUI" parent="UI" instance=ExtResource("5_rg4bk")]

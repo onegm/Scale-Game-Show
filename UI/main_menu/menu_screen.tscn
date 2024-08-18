@@ -1,0 +1,68 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc838hd7f3grk"]
+
+[ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
+[ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
+
+[node name="MenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3k7ia")
+
+[node name="MainMenu" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="GameName" type="RichTextLabel" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[wave amp=60]SCALE GAME SHOW"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StartBtn" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="SettingsBtn" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="QuitBtn" type="Button" parent="MainMenu/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_ml36l")]
+layout_mode = 1
+offset_top = 720.0
+offset_bottom = 720.0
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
