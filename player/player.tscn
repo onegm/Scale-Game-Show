@@ -88,30 +88,6 @@ flip_h = true
 position = Vector2(-2.5, -64)
 shape = SubResource("RectangleShape2D_b0fiy")
 
-[node name="PointsLabel" type="Label" parent="."]
-offset_left = -51.0
-offset_top = -224.0
-offset_right = 47.0
-offset_bottom = -201.0
-text = "TEST POINTS"
-horizontal_alignment = 1
-
-[node name="ComboLabel" type="Label" parent="."]
-offset_left = -51.0
-offset_top = -250.0
-offset_right = 47.0
-offset_bottom = -227.0
-text = "COMBO"
-horizontal_alignment = 1
-
-[node name="TimingLabel" type="Label" parent="."]
-offset_left = -51.0
-offset_top = -199.0
-offset_right = 47.0
-offset_bottom = -176.0
-text = "TIMING"
-horizontal_alignment = 1
-
 [node name="Anim" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_o6smt")
