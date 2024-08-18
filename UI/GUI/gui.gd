@@ -1,11 +1,23 @@
 extends Control
 
-@onready var DownPoseRect: TextureRect = $VBoxContainer/LowContainer/VBoxContainer/DownPoseRect
-@onready var UpPoseRect: TextureRect = $VBoxContainer/LowContainer/VBoxContainer/UpPoseRect
-@onready var LeftPoseRect: TextureRect = $VBoxContainer/LowContainer/LeftPoseRect
-@onready var RightPoseRect: TextureRect = $VBoxContainer/LowContainer/RightPoseRect
+@onready var PointsLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/PointsLabel
+@onready var ComboLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/ComboLabel
+@onready var TimingLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/TimingLabel
 
+
+@onready var DownPoseRect: TextureRect = $VBoxContainer/LowContainer/PosesContainer/VBoxContainer/DownPoseRect
+@onready var UpPoseRect: TextureRect = $VBoxContainer/LowContainer/PosesContainer/VBoxContainer/UpPoseRect
+@onready var LeftPoseRect: TextureRect = $VBoxContainer/LowContainer/PosesContainer/LeftPoseRect
+@onready var RightPoseRect: TextureRect = $VBoxContainer/LowContainer/PosesContainer/RightPoseRect
 var last_pose := 0
+
+func _ready() -> void:
+	SignalBus.score_update.connect(on_score_update)
+
+func on_score_update(points : int, combo : int, timing : String):
+	PointsLabel.set_text(str(points))
+	ComboLabel.set_text(str("x", combo))
+	TimingLabel.set_text(timing)
 
 func _unhandled_input(_event: InputEvent) -> void:
 	#var size_input := int(Input.get_axis("size_down", "size_up"))

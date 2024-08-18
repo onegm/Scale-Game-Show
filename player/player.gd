@@ -55,14 +55,11 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 	if wall_pose.equals(player_state):
 		point_counter += 1
 		combo_meter += 1
-		$TimingLabel.set_text(score)
-		$PointsLabel.set_text(str(point_counter))
-		$ComboLabel.set_text(str("x", combo_meter))
+		SignalBus.score_update.emit(point_counter, combo_meter, score)
 		$Anim.play("right_pose")
 	else:
-		$PointsLabel.set_text("Miss")
 		combo_meter = 0
-		$ComboLabel.set_text(str("x", combo_meter))
+		SignalBus.score_update.emit(point_counter, combo_meter, "Miss")
 
 func pose_hit():
 	last_pose_timer = 0
