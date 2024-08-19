@@ -4,7 +4,8 @@ extends Control
 @onready var ComboLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/ComboLabel
 @onready var TimingLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/TimingLabel
 
-@onready var SizeRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/SizeRect
+@onready var SizeUpRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/SizeContainer/SizeUpRect
+@onready var SizeDownRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/SizeContainer/SizeDownRect
 @onready var LeftDirRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/LeftDirRect
 @onready var RightDirRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/RightDirRect
 @onready var PosesRect: TextureRect = $VBoxContainer/LowContainer/PosesRect
@@ -25,18 +26,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 	var size_input := int(Input.get_axis("size_down", "size_up"))
 	if size_input != last_size:
 		if size_input == 0:
-			SizeRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element.png"))
+			SizeUpRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - W.png"))
+			SizeDownRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - S.png"))
 		elif size_input == 1:
-			SizeRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - W Highlight.png"))
+			SizeUpRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - W Highlight.png"))
 		else:
-			SizeRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - S Highlight.png"))
+			SizeDownRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - S Highlight.png"))
 	last_size = size_input
 	
 	var dir_input := int(Input.get_axis("look_left", "look_right"))
 	if dir_input != last_dir:
 		if dir_input == 0:
-			LeftDirRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element.png"))
-			RightDirRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element.png"))
+			LeftDirRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - A.png"))
+			RightDirRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - D.png"))
 		elif dir_input == 1:
 			RightDirRect.texture.set_atlas(load("res://UI/Elements/WASD HUD element - D Highlight.png"))
 		else:
