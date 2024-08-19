@@ -53,7 +53,13 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 		score = "Normal"
 	
 	if wall_pose.equals(player_state):
-		point_counter += 1
+		match score:
+			"Perfect":
+				point_counter += (200 + (5 * combo_meter))
+			"Great":
+				point_counter += (100 + (2 * combo_meter))
+			"Normal":
+				point_counter += (50 + (combo_meter))
 		combo_meter += 1
 		SignalBus.score_update.emit(point_counter, combo_meter, score)
 		$Anim.play("right_pose")

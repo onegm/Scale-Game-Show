@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6y1dqx8ki7a7"]
+
+[ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
+[ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
+[ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
+[ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
+[ext_resource type="Script" path="res://levels/camera.gd" id="5_vgxum"]
+
+[node name="Level1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_bx0cw")
+song_num = 2
+wall_sequence_num = 1
+
+[node name="LevelBackground" parent="." instance=ExtResource("2_qthyg")]
+
+[node name="WallSpawnPoint" type="Marker2D" parent="."]
+position = Vector2(1500, 475)
+
+[node name="Player" parent="." instance=ExtResource("1_c3ycx")]
+position = Vector2(355, 475)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="UI" instance=ExtResource("5_rg4bk")]
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+position_smoothing_enabled = true
+script = ExtResource("5_vgxum")
