@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvprlymwlmhan"]
+[gd_scene load_steps=17 format=3 uid="uid://cvprlymwlmhan"]
 
 [ext_resource type="Script" path="res://walls/wall.gd" id="1_skayl"]
 [ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/cutout/Cutout.tscn" id="2_7uj5q"]
@@ -85,6 +85,14 @@ size = Vector2(8, 690)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stfi1"]
 size = Vector2(188, 536)
 
+[sub_resource type="Curve" id="Curve_osqy4"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.275281, 0.296703), 0.0, 0.0, 0, 0, Vector2(0.769663, 0.89011), 0.0, 0.0, 0, 0, Vector2(1, 0.032967), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_c72tj"]
+offsets = PackedFloat32Array(0.0266667, 0.453333, 0.946667)
+colors = PackedColorArray(0.65098, 0.278431, 0.34902, 1, 0.470588, 0.180392, 0.239216, 1, 0.345098, 0.0823529, 0.101961, 1)
+
 [node name="Wall" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 0
@@ -138,3 +146,36 @@ collision_layer = 0
 position = Vector2(84, -258)
 shape = SubResource("RectangleShape2D_stfi1")
 debug_color = Color(0.856649, 0.216764, 0.731067, 0.42)
+
+[node name="MotionParticles" type="CPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-130, 0)
+amount = 20
+lifetime = 0.4
+emission_shape = 3
+emission_rect_extents = Vector2(200, 1)
+direction = Vector2(0, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 75.0
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_osqy4")
+color = Color(1, 1, 1, 0.254902)
+
+[node name="BreakParticles" type="CPUParticles2D" parent="."]
+position = Vector2(92, -350)
+emitting = false
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(50, 300)
+direction = Vector2(0, -1)
+spread = 90.0
+initial_velocity_min = 300.0
+initial_velocity_max = 600.0
+scale_amount_min = 2.0
+scale_amount_max = 10.0
+color_initial_ramp = SubResource("Gradient_c72tj")

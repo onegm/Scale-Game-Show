@@ -47,6 +47,8 @@ func break_wall():
 	$WallPieces.visible = true
 	outlines.visible = false
 	cutout.visible = false
+	$MotionParticles.emitting = false
+	$BreakParticles.emitting = true
 	var tween = get_tree().create_tween().set_parallel(true).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property($WallPieces/LeftWall, "rotation", -2, 1)
 	tween.tween_property($WallPieces/RightWall, "rotation", 2, 1)
