@@ -16,11 +16,16 @@ var last_pose := 0
 
 func _ready() -> void:
 	SignalBus.score_update.connect(on_score_update)
+	SignalBus.settings_updated.connect(on_settings_updated)
+	$VBoxContainer.move_child($VBoxContainer/LowContainer, int(!Game.settings["ControlsOnTop"]))
 
 func on_score_update(points : int, combo : int, timing : String):
 	PointsLabel.set_text(str(points))
 	ComboLabel.set_text(str("x", combo))
 	TimingLabel.set_text(timing)
+
+func on_settings_updated():
+	$VBoxContainer.move_child($VBoxContainer/LowContainer, int(!Game.settings["ControlsOnTop"]))
 
 func _unhandled_input(_event: InputEvent) -> void:
 	var size_input := int(Input.get_axis("size_down", "size_up"))

@@ -1,7 +1,8 @@
 extends Node
 
 var settings := {
-	"MainAudioVolume" : 1
+	"MainAudioVolume" : 1,
+	"ControlsOnTop" : false
 }
 var main_scene_path = "res://levels/Level1.tscn"
 var WALL_SPEED = 250.0
