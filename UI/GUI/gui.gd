@@ -10,6 +10,9 @@ extends Control
 @onready var RightDirRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/RightDirRect
 @onready var PosesRect: TextureRect = $VBoxContainer/LowContainer/PosesRect
 
+var points := 0
+var max_combo := 0
+
 var last_size := 0
 var last_dir := 0
 var last_pose := 0
@@ -19,10 +22,13 @@ func _ready() -> void:
 	SignalBus.settings_updated.connect(on_settings_updated)
 	$VBoxContainer.move_child($VBoxContainer/LowContainer, int(!Game.settings["ControlsOnTop"]))
 
-func on_score_update(points : int, combo : int, timing : String):
-	PointsLabel.set_text(str(points))
+func on_score_update(new_points : int, combo : int, timing : String):
+	PointsLabel.set_text(str(new_points))
 	ComboLabel.set_text(str("x", combo))
 	TimingLabel.set_text(timing)
+	
+	points = new_points
+	max_combo = max(combo, max_combo)
 
 func on_settings_updated():
 	$VBoxContainer.move_child($VBoxContainer/LowContainer, int(!Game.settings["ControlsOnTop"]))

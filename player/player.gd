@@ -60,6 +60,7 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 	else:
 		combo_meter = 0
 		SignalBus.score_update.emit(point_counter, combo_meter, "Miss")
+		SignalBus.player_miss.emit()
 
 func pose_hit():
 	last_pose_timer = 0

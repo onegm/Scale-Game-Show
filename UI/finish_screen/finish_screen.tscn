@@ -1,0 +1,85 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmp7y8ifww75q"]
+
+[ext_resource type="Script" path="res://UI/finish_screen/finish_screen.gd" id="1_od5ko"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmj57"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="FinishScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_od5ko")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tmj57")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ResultLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "SUCCESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreContainer" type="VBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="PointsLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Points: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxComboLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Max Combo: 000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AgainBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Try Again"
+
+[node name="ExitBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Exit"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/AgainBtn" to="." method="_on_again_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]
