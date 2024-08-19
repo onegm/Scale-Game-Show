@@ -87,18 +87,19 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_skayl")
 
 [node name="Cutout" parent="." instance=ExtResource("2_7uj5q")]
+visible = false
 
 [node name="Wall" type="Sprite2D" parent="Cutout"]
-scale = Vector2(0.2, 0.25)
+scale = Vector2(0.23, 0.25)
 texture = ExtResource("3_pjrlj")
-offset = Vector2(19.9998, -1260)
+offset = Vector2(-150, -1260)
 
 [node name="CutoutCover" parent="." instance=ExtResource("2_7uj5q")]
 z_index = 1
 
 [node name="WallCover" type="Polygon2D" parent="CutoutCover"]
-scale = Vector2(0.2, 0.25)
-offset = Vector2(-1825, -2665)
+scale = Vector2(0.23, 0.25)
+offset = Vector2(-1995, -2665)
 texture = ExtResource("3_pjrlj")
 polygon = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)
 uv = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)

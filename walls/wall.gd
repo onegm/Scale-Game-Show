@@ -14,7 +14,7 @@ func _ready():
 	
 func on_area_exited(_area):
 	SignalBus.wall_hit.emit(postureDTO)
-	#z_index+=1
+
 
 func _physics_process(delta):
 	global_position.x -= speed*delta
