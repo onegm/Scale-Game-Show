@@ -18,6 +18,7 @@ func _init(song_num : int):
 
 func _ready():
 	add_child(song)
+	song.finished.connect(func(): SignalBus.song_ended.emit())
 	add_child(time_sequence)
 	var song_file = song_sequence_file.get_line()
 	assert(ResourceLoader.exists(song_file), "Resource does not exist at: " + song_file)

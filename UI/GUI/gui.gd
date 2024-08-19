@@ -20,6 +20,7 @@ var last_pose := 0
 func _ready() -> void:
 	SignalBus.score_update.connect(on_score_update)
 	SignalBus.settings_updated.connect(on_settings_updated)
+	SignalBus.song_ended.connect(on_music_finished)
 	$VBoxContainer.move_child($VBoxContainer/LowContainer, int(!Game.settings["ControlsOnTop"]))
 
 func on_score_update(new_points : int, combo : int, timing : String):

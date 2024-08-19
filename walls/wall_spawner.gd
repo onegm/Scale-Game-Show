@@ -17,18 +17,20 @@ func _init(sequence_num : int):
 	wall_sequence = load(wall_sequence_path).new()
 
 func spawn_wall():
+	var new_wall = wall_scene.instantiate()
+	add_sibling(new_wall)
+	return new_wall	
+
+func spawn_wall_from_sequence():
 	if !wall_sequence.has_next():
 		return
 	var next_posture = wall_sequence.next();
-
-	var new_wall = wall_scene.instantiate()
-	add_sibling(new_wall)
-	new_wall.set_posture_from_DTO(next_posture)
+	var wall = spawn_wall()
+	wall.set_posture_from_DTO(next_posture)
 	
 func spawn_random_wall():
-	var new_wall = wall_scene.instantiate()
-	add_sibling(new_wall)
-	new_wall.set_posture_from_DTO(PostureDTO.get_random_wall())
+	var wall = spawn_wall()
+	wall.set_posture_from_DTO(PostureDTO.get_random_wall())
 
 func offset_time_by_position(new_time_sequence : FloatIterator, player_position : Vector2):
 	distance = player_position.distance_to(global_position)
@@ -46,6 +48,4 @@ func spawn_timer():
 	if time < 0:
 		return
 	await get_tree().create_timer(time, false).timeout
-	spawn_wall()
-	
-	
+	spawn_wall_from_sequence()

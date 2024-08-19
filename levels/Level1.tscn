@@ -14,7 +14,7 @@ wall_sequence_num = 1
 [node name="LevelBackground" parent="." instance=ExtResource("2_qthyg")]
 
 [node name="WallSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(1136, 475)
+position = Vector2(1500, 475)
 
 [node name="Player" parent="." instance=ExtResource("1_c3ycx")]
 position = Vector2(355, 475)

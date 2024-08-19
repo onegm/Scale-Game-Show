@@ -5,16 +5,20 @@ extends Area2D
 @onready var cutout_cover = $CutoutCover
 @onready var wall_cover = $CutoutCover/WallCover
 @onready var outlines = $Outlines
+@onready var current_wall_detector := $CurrentWallDetector
 
 var postureDTO : PostureDTO
 var speed = Game.WALL_SPEED
+var is_current_wall := false
 
 func _ready():
 	area_exited.connect(on_area_exited)
+	SignalBus.player_miss.connect(on_player_missed)
+	current_wall_detector.area_entered.connect(func(_area): is_current_wall=true)
+	current_wall_detector.area_exited.connect(func(_area): is_current_wall=false)
 	
 func on_area_exited(_area):
 	SignalBus.wall_hit.emit(postureDTO)
-
 
 func _physics_process(delta):
 	global_position.x -= speed*delta
@@ -39,3 +43,16 @@ func set_wall_and_posture_scale(new_scale : float):
 	wall_cover.scale /= new_scale
 	outlines.scale = Vector2.ONE*new_scale
 
+func on_player_missed():
+	if is_current_wall:
+		break_wall()
+
+func break_wall():
+	$WallPieces.visible = true
+	outlines.visible = false
+	cutout.visible = false
+	cutout_cover.visible = false
+	var tween = get_tree().create_tween().set_parallel(true)
+	tween.tween_property($WallPieces/LeftWall, "rotation", -2, 1)
+	tween.tween_property($WallPieces/RightWall, "rotation", 2, 1)
+	tween.chain().tween_callback($WallPieces.queue_free)
