@@ -45,7 +45,7 @@ func spawn_timer():
 	time -= distance / Game.WALL_SPEED
 	if time < 0:
 		return
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(time, false).timeout
 	spawn_wall()
 	
 	
