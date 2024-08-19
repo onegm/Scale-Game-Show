@@ -9,7 +9,7 @@ var wall_sequence_path = "res://walls/wall_sequence/wall_sequence_"
 var start_time : int
 
 var distance : float
-var time_sequence : TimeSequence
+var time_sequence : FloatIterator
 
 func _init(sequence_num : int):
 	wall_sequence_path += str(sequence_num) + ".gd"
@@ -30,7 +30,7 @@ func spawn_random_wall():
 	add_sibling(new_wall)
 	new_wall.set_posture_from_DTO(PostureDTO.get_random_wall())
 
-func offset_time_by_position(new_time_sequence : TimeSequence, player_position : Vector2):
+func offset_time_by_position(new_time_sequence : FloatIterator, player_position : Vector2):
 	distance = player_position.distance_to(global_position)
 	time_sequence = new_time_sequence
 
