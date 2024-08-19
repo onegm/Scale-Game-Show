@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://bmrollmi4tdrv"]
 
 [ext_resource type="Script" path="res://UI/GUI/gui.gd" id="1_7kdd7"]
-[ext_resource type="Texture2D" uid="uid://bmre3k7k4l3dt" path="res://UI/Elements/WASD HUD element - A.png" id="2_i56w7"]
-[ext_resource type="Texture2D" uid="uid://cepe26don7hr3" path="res://UI/Elements/WASD HUD element - W.png" id="3_gm7y7"]
-[ext_resource type="Texture2D" uid="uid://bjohhr5ltj28" path="res://UI/Elements/WASD HUD element - S.png" id="4_pmxhq"]
-[ext_resource type="Texture2D" uid="uid://c0aelhvbrisjx" path="res://UI/Elements/WASD HUD element - D.png" id="5_t1hhy"]
-[ext_resource type="Texture2D" uid="uid://dave7v3x0bl4s" path="res://UI/Elements/Arrow Keys HUD element.png" id="7_pnrr0"]
+[ext_resource type="Texture2D" uid="uid://bwelf5ld7npp6" path="res://UI/Elements/WASD HUD element - A.png" id="2_i56w7"]
+[ext_resource type="Texture2D" uid="uid://bn2k4s34xsm82" path="res://UI/Elements/WASD HUD element - W.png" id="3_gm7y7"]
+[ext_resource type="Texture2D" uid="uid://bkp8hxc47jmy0" path="res://UI/Elements/WASD HUD element - S.png" id="4_pmxhq"]
+[ext_resource type="Texture2D" uid="uid://d2nr4431dw5gl" path="res://UI/Elements/WASD HUD element - D.png" id="5_t1hhy"]
+[ext_resource type="Texture2D" uid="uid://cbm4lxyb8jlj3" path="res://UI/Elements/Arrow Keys HUD element.png" id="7_pnrr0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02vyc"]
 atlas = ExtResource("2_i56w7")
