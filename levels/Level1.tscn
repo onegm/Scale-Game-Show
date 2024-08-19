@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6y1dqx8ki7a7"]
+[gd_scene load_steps=10 format=3 uid="uid://c6y1dqx8ki7a7"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
 [ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
 [ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
 [ext_resource type="Script" path="res://levels/camera.gd" id="5_vgxum"]
+[ext_resource type="Texture2D" uid="uid://b6givmv5a5qsn" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
+[ext_resource type="Texture2D" uid="uid://djw8wxkl8gjuj" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
+[ext_resource type="Texture2D" uid="uid://cpn1nyhhg4qhp" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
+[ext_resource type="Texture2D" uid="uid://6sx0l57d2umo" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -15,16 +19,131 @@ wall_sequence_num = 1
 [node name="LevelBackground" parent="." instance=ExtResource("2_qthyg")]
 
 [node name="WallSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(1500, 475)
+position = Vector2(1500, 537)
 
 [node name="Player" parent="." instance=ExtResource("1_c3ycx")]
-position = Vector2(355, 475)
+position = Vector2(355, 537)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="UI" instance=ExtResource("5_rg4bk")]
+metadata/_edit_lock_ = true
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(640, 360)
 position_smoothing_enabled = true
 script = ExtResource("5_vgxum")
+
+[node name="GmtkStageForeground-Lights" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(634, 350)
+scale = Vector2(0.650926, 0.650926)
+texture = ExtResource("6_vf1aw")
+
+[node name="GmtkStageForeground-PeopleClose" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(643, 373)
+scale = Vector2(0.668518, 0.668518)
+texture = ExtResource("7_0m83s")
+
+[node name="GmtkStageForeground-Hands" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(649, 370)
+scale = Vector2(0.668287, 0.6625)
+texture = ExtResource("8_n13x7")
+
+[node name="WallTextureBg" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(210.006, 101.25)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg2" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(210.006, 319.25)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg3" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(638.013, 101.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg4" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(638.013, 319.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg5" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1066.01, 101.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg6" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1066.01, 319.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg7" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(210.006, 537.25)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg8" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(210.006, 755.25)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg9" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(638.013, 537.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg10" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(638.013, 755.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg11" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1066.01, 537.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
+
+[node name="WallTextureBg12" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+position = Vector2(1066.01, 755.5)
+scale = Vector2(0.561697, 0.561697)
+texture = ExtResource("9_nmsj5")
+metadata/_edit_lock_ = true
