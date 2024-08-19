@@ -12,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://d3lew8jcbcgr8" path="res://walls/art/outlines/Wave Cutout Right.png" id="9_4xlcj"]
 [ext_resource type="Texture2D" uid="uid://b6ba1j03g4tr3" path="res://walls/art/outlines/Fight Cutout Right.png" id="10_v44wy"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqmh"]
-size = Vector2(8, 690)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_wrvex"]
 animations = [{
 "frames": [{
@@ -82,8 +79,11 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqmh"]
+size = Vector2(8, 690)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stfi1"]
-size = Vector2(234, 536)
+size = Vector2(188, 536)
 
 [node name="Wall" type="Area2D"]
 scale = Vector2(0.5, 0.5)
@@ -92,24 +92,17 @@ script = ExtResource("1_skayl")
 
 [node name="Cutout" parent="." instance=ExtResource("2_7uj5q")]
 
-[node name="Wall" type="Sprite2D" parent="Cutout"]
+[node name="Wall" type="Sprite2D" parent="."]
 scale = Vector2(0.23, 0.25)
 texture = ExtResource("3_pjrlj")
 offset = Vector2(-150, -1260)
 
-[node name="CutoutCover" parent="." instance=ExtResource("2_7uj5q")]
-z_index = 1
-
-[node name="WallCover" type="Polygon2D" parent="CutoutCover"]
+[node name="WallCover" type="Polygon2D" parent="."]
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1995, -2665)
 texture = ExtResource("3_pjrlj")
-polygon = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)
-uv = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(14, -344)
-shape = SubResource("RectangleShape2D_wwqmh")
+polygon = PackedVector2Array(2110, 45, 2120, 2790, 3330, 2795, 3300, 10)
+uv = PackedVector2Array(2110, 45, 2120, 2790, 3330, 2795, 3300, 10)
 
 [node name="WallPieces" type="Node2D" parent="."]
 visible = false
@@ -119,24 +112,29 @@ position = Vector2(10, 0)
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1992, -2665)
 texture = ExtResource("3_pjrlj")
-polygon = PackedVector2Array(1780, 11.1111, 1835.56, 75.5556, 1577.78, 328.889, 2108.89, 857.778, 1577.78, 1388.89, 2106.67, 1908.89, 1577.42, 2425.81, 1841.94, 2674.19, 445.161, 2758.06, 432.258, 9.67743)
-uv = PackedVector2Array(1780, 11.1111, 1835.56, 75.5556, 1577.78, 328.889, 2108.89, 857.778, 1577.78, 1388.89, 2106.67, 1908.89, 1577.42, 2425.81, 1841.94, 2674.19, 445.161, 2758.06, 432.258, 9.67743)
+polygon = PackedVector2Array(2365.38, 76.9231, 2103.85, 338.462, 2369.23, 600, 2103.85, 861.538, 2365.38, 1111.54, 2103.85, 1384.62, 2373.08, 1650, 2096.15, 1903.85, 2361.54, 2161.54, 2107.69, 2438.46, 2384.62, 2700, 365.385, 2715.38, 315.385, -26.9231, 2376.92, -26.9231)
+uv = PackedVector2Array(2365.38, 76.9231, 2103.85, 338.462, 2369.23, 600, 2103.85, 861.538, 2365.38, 1111.54, 2103.85, 1384.62, 2373.08, 1650, 2096.15, 1903.85, 2361.54, 2161.54, 2107.69, 2438.46, 2384.62, 2700, 365.385, 2715.38, 315.385, -26.9231, 2376.92, -26.9231)
 
 [node name="RightWall" type="Polygon2D" parent="WallPieces"]
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1992, -2665)
 texture = ExtResource("3_pjrlj")
-polygon = PackedVector2Array(1837.78, 71.1111, 1577.78, 333.333, 2104.44, 860, 1577.78, 1384.44, 2104.44, 1908.89, 1577.78, 2428.89, 1837.78, 2662.22, 1828.89, 2757.78, 3351.11, 2764.44, 3320, 8.88885, 1833.33, 13.3333)
-uv = PackedVector2Array(1837.78, 71.1111, 1577.78, 333.333, 2104.44, 860, 1577.78, 1384.44, 2104.44, 1908.89, 1577.78, 2428.89, 1837.78, 2662.22, 1828.89, 2757.78, 3351.11, 2764.44, 3320, 8.88885, 1833.33, 13.3333)
+polygon = PackedVector2Array(2369.23, 69.2308, 2107.69, 338.462, 2365.38, 592.308, 2107.69, 857.692, 2361.54, 1119.23, 2096.15, 1396.15, 2365.38, 1650, 2100, 1915.38, 2365.38, 2169.23, 2103.85, 2442.31, 2373.08, 2680.77, 3326.92, 2692.31, 3276.92, 23.0769, 2353.85, 19.2308)
+uv = PackedVector2Array(2369.23, 69.2308, 2107.69, 338.462, 2365.38, 592.308, 2107.69, 857.692, 2361.54, 1119.23, 2096.15, 1396.15, 2365.38, 1650, 2100, 1915.38, 2365.38, 2169.23, 2103.85, 2442.31, 2373.08, 2680.77, 3326.92, 2692.31, 3276.92, 23.0769, 2353.85, 19.2308)
 
 [node name="Outlines" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wrvex")
 animation = &"2"
 offset = Vector2(0, -375)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, -344)
+shape = SubResource("RectangleShape2D_wwqmh")
+
 [node name="CurrentWallDetector" type="Area2D" parent="."]
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CurrentWallDetector"]
-position = Vector2(107, -258)
+position = Vector2(84, -258)
 shape = SubResource("RectangleShape2D_stfi1")
+debug_color = Color(0.856649, 0.216764, 0.731067, 0.42)
