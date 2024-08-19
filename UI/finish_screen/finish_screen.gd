@@ -11,6 +11,9 @@ func move_up():
 	tween.set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "position", Vector2(0, 0), 0.8)
 
+func _on_next_btn_pressed() -> void:
+	get_tree().call_deferred("change_scene_to_packed", get_parent().next_level)
+
 func _on_again_btn_pressed() -> void:
 	get_tree().call_deferred("reload_current_scene")
 

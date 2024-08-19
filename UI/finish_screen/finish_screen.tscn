@@ -65,7 +65,20 @@ text = "Max Combo: 000"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AgainBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
+[node name="LevelOptContainer" type="HBoxContainer" parent="CenterContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="NextBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+theme_override_font_sizes/font_size = 50
+text = "Next Level"
+
+[node name="AgainBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -81,5 +94,6 @@ focus_mode = 0
 theme_override_font_sizes/font_size = 50
 text = "Exit"
 
-[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/AgainBtn" to="." method="_on_again_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/LevelOptContainer/NextBtn" to="." method="_on_next_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/LevelOptContainer/AgainBtn" to="." method="_on_again_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/ExitBtn" to="." method="_on_exit_btn_pressed"]

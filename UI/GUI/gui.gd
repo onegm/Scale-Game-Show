@@ -10,6 +10,8 @@ extends Control
 @onready var RightDirRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/RightDirRect
 @onready var PosesRect: TextureRect = $VBoxContainer/LowContainer/PosesRect
 
+@export var next_level : PackedScene
+
 var points := 0
 var max_combo := 0
 
