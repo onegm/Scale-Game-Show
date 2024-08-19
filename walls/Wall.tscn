@@ -135,6 +135,7 @@ animation = &"2"
 offset = Vector2(0, -375)
 
 [node name="CurrentWallDetector" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CurrentWallDetector"]
 position = Vector2(107, -258)
