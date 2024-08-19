@@ -1,7 +1,7 @@
 extends Node
 class_name SongSequence
 
-@onready var time_sequence := TimeSequence.new()
+@onready var time_sequence := FloatIterator.new()
 @onready var song := AudioStreamPlayer.new()
 
 static var song_sequence_path = "res://songs/song_timestamps/song_"

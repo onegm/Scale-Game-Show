@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cvprlymwlmhan"]
+[gd_scene load_steps=14 format=3 uid="uid://cvprlymwlmhan"]
 
 [ext_resource type="Script" path="res://walls/wall.gd" id="1_skayl"]
-[ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/posture/Posture.tscn" id="2_7uj5q"]
+[ext_resource type="PackedScene" uid="uid://d1fvq2460vh11" path="res://walls/cutout/Cutout.tscn" id="2_7uj5q"]
 [ext_resource type="Texture2D" uid="uid://3wciu7kkrkk" path="res://walls/art/walls/color/brick_wall.png" id="3_pjrlj"]
-[ext_resource type="Texture2D" uid="uid://bldld0uo8ocjq" path="res://walls/art/wall.png" id="3_rfxvc"]
 [ext_resource type="Texture2D" uid="uid://dbr65rhf52o7e" path="res://walls/art/outlines/Crouch Cutout Right.png" id="4_dxtw0"]
 [ext_resource type="Texture2D" uid="uid://fi0eattgvtci" path="res://walls/art/outlines/Point Cutout Left.png" id="4_hixfj"]
 [ext_resource type="Texture2D" uid="uid://8urnmlhh2gdu" path="res://walls/art/outlines/Wave Cutout Left.png" id="5_m0uip"]
@@ -87,18 +86,22 @@ animations = [{
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_skayl")
 
-[node name="Posture" parent="." instance=ExtResource("2_7uj5q")]
+[node name="Cutout" parent="." instance=ExtResource("2_7uj5q")]
 
-[node name="Wall1" type="Sprite2D" parent="Posture"]
-visible = false
-scale = Vector2(1.2, 1)
-texture = ExtResource("3_rfxvc")
-offset = Vector2(0, -340)
-
-[node name="Wall" type="Sprite2D" parent="Posture"]
-scale = Vector2(0.2, 0.25)
+[node name="Wall" type="Sprite2D" parent="Cutout"]
+scale = Vector2(0.23, 0.25)
 texture = ExtResource("3_pjrlj")
-offset = Vector2(19.9998, -1260)
+offset = Vector2(-150, -1260)
+
+[node name="CutoutCover" parent="." instance=ExtResource("2_7uj5q")]
+z_index = 1
+
+[node name="WallCover" type="Polygon2D" parent="CutoutCover"]
+scale = Vector2(0.23, 0.25)
+offset = Vector2(-1995, -2665)
+texture = ExtResource("3_pjrlj")
+polygon = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)
+uv = PackedVector2Array(1838.46, 50, 1850, 2703.85, 3346.15, 2715.38, 3323.08, 34.6154)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, -344)

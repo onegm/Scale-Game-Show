@@ -1,5 +1,5 @@
 extends Node
-class_name TimeSequence
+class_name FloatIterator
 
 @onready var sequence : Array = []
 
