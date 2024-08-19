@@ -16,7 +16,7 @@
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_hixfj")
+"texture": ExtResource("8_hqnop")
 }],
 "loop": false,
 "name": &"2",
@@ -48,7 +48,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_hqnop")
+"texture": ExtResource("4_hixfj")
 }],
 "loop": false,
 "name": &"6",
@@ -132,7 +132,7 @@ uv = PackedVector2Array(2369.23, 69.2308, 2107.69, 338.462, 2365.38, 592.308, 21
 
 [node name="Outlines" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_wrvex")
-animation = &"2"
+animation = &"6"
 offset = Vector2(0, -375)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

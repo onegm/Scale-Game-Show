@@ -7,6 +7,7 @@ extends Area2D
 var postureDTO : PostureDTO
 var speed = Game.WALL_SPEED
 var is_current_wall := false
+var is_final_wall := false
 
 func _ready():
 	area_exited.connect(on_area_exited)

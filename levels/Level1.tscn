@@ -26,4 +26,5 @@ position = Vector2(355, 475)
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(640, 360)
+position_smoothing_enabled = true
 script = ExtResource("5_vgxum")
