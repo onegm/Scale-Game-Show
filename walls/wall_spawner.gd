@@ -16,17 +16,20 @@ func _init(sequence_num : int):
 	assert(ResourceLoader.exists(wall_sequence_path), "RESOURCE NOT FOUND: " + wall_sequence_path)
 	wall_sequence = load(wall_sequence_path).new()
 
-func spawn_wall():
+func spawn_wall() -> Wall:
 	var new_wall = wall_scene.instantiate()
 	add_sibling(new_wall)
 	return new_wall	
 
-func spawn_wall_from_sequence():
+func spawn_wall_from_sequence(is_final_wall : bool):
 	if !wall_sequence.has_next():
 		return
 	var next_posture = wall_sequence.next();
-	var wall = spawn_wall()
+	var wall := spawn_wall()
 	wall.set_posture_from_DTO(next_posture)
+	wall.is_final_wall = is_final_wall
+	if wall.is_final_wall:
+		print(wall.postureDTO)
 	
 func spawn_random_wall():
 	var wall = spawn_wall()
@@ -48,4 +51,4 @@ func spawn_timer():
 	if time < 0:
 		return
 	await get_tree().create_timer(time, false).timeout
-	spawn_wall_from_sequence()
+	spawn_wall_from_sequence(!time_sequence.has_next())

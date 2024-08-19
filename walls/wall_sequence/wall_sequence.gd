@@ -15,4 +15,5 @@ func next() -> PostureDTO:
 
 func add(postureDTO : PostureDTO):
 	sequence.append(postureDTO) 
+
 	

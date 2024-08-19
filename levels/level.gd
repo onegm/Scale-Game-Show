@@ -15,3 +15,4 @@ func _ready():
 	await get_tree().create_timer(2).timeout
 	song.play()
 	wall_spawner.start()
+	$Camera.set_player_position(player.global_position)
