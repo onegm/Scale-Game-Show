@@ -13,12 +13,7 @@ var is_final_wall := false
 func _ready():
 	area_exited.connect(on_area_exited)
 	SignalBus.player_miss.connect(on_player_missed)
-	current_wall_detector.area_entered.connect(
-		func(_area): 
-			is_current_wall=true
-			if is_final_wall:
-				SignalBus.final_wall_entered.emit()
-	)
+	current_wall_detector.area_entered.connect(func(_area): is_current_wall=true)
 	current_wall_detector.area_exited.connect(func(_area): is_current_wall=false)
 	
 	cutout.set_wall($Wall)
@@ -26,6 +21,8 @@ func _ready():
 	
 func on_area_exited(_area):
 	SignalBus.wall_hit.emit(postureDTO)
+	if is_final_wall:
+		SignalBus.final_wall_exited.emit()
 
 func _physics_process(delta):
 	global_position.x -= speed*delta

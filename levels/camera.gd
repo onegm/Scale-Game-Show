@@ -12,7 +12,7 @@ const SHAKE_DECAY : float = 10.0
 func _ready():
 	rand.randomize()
 	SignalBus.player_miss.connect(shake)
-	SignalBus.final_wall_entered.connect(on_final_wall_entered)
+	SignalBus.final_wall_exited.connect(on_final_wall_exited)
 
 func _process(delta):
 	if current_shake_strength > 1e-5:
@@ -31,22 +31,24 @@ func get_shake_offset():
 func set_player_position(new_player_position : Vector2):
 	player_position = new_player_position
 
-func on_final_wall_entered():
+func on_final_wall_exited():
 	var tween = get_tree().create_tween().set_parallel(true)
 	tween.tween_property(self, "zoom", zoom*2, 1)
 	tween.tween_property(self, "global_position:x", player_position.x, 1)
+	
 	await start_slow_motion()
-	var tween2 = get_tree().create_tween().set_parallel(true)
-	tween2.tween_property(self, "zoom", zoom/2, 1)
-	tween2.tween_property(self, "global_position:x", initial_position.x, 1)
+	
+	#var tween2 = get_tree().create_tween().set_parallel(true)
+	#tween2.tween_property(self, "zoom", zoom/2, 1)
+	#tween2.tween_property(self, "global_position:x", initial_position.x, 1)
+
 	stop_slow_motion()
 
 func start_slow_motion(time_scale: float = 0.25) -> void:
 	Engine.time_scale = time_scale
-	AudioServer.playback_speed_scale = time_scale
-	await get_tree().create_timer(3, false, false, true).timeout
+	#AudioServer.playback_speed_scale = time_scale
+	await get_tree().create_timer(4, false, false, true).timeout
 
-# Run the game at normal speed.
 func stop_slow_motion() -> void:
 	Engine.time_scale = 1.0
 	AudioServer.playback_speed_scale = 1.0

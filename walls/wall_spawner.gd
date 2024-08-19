@@ -28,12 +28,11 @@ func spawn_wall_from_sequence(is_final_wall : bool):
 	var wall := spawn_wall()
 	wall.set_posture_from_DTO(next_posture)
 	wall.is_final_wall = is_final_wall
-	if wall.is_final_wall:
-		print(wall.postureDTO)
 	
-func spawn_random_wall():
+func spawn_random_wall(is_final_wall : bool):
 	var wall = spawn_wall()
 	wall.set_posture_from_DTO(PostureDTO.get_random_wall())
+	wall.is_final_wall = is_final_wall
 
 func offset_time_by_position(new_time_sequence : FloatIterator, player_position : Vector2):
 	distance = player_position.distance_to(global_position)
@@ -51,4 +50,7 @@ func spawn_timer():
 	if time < 0:
 		return
 	await get_tree().create_timer(time, false).timeout
-	spawn_wall_from_sequence(!time_sequence.has_next())
+	if wall_sequence.has_next():
+		spawn_wall_from_sequence(!time_sequence.has_next())
+	else:
+		spawn_random_wall(!time_sequence.has_next())

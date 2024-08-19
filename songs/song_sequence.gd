@@ -12,9 +12,9 @@ var timers : Array = []
 var song_sequence_file : FileAccess
 
 func _init(song_num : int):
-	song_sequence_path += str(song_num) + ".txt"
-	assert(FileAccess.file_exists(song_sequence_path), "RESOURCE NOT FOUND: " + song_sequence_path)
-	song_sequence_file = FileAccess.open(song_sequence_path,FileAccess.READ)
+	var path = song_sequence_path + str(song_num) + ".txt"
+	assert(FileAccess.file_exists(path), "RESOURCE NOT FOUND: " + path)
+	song_sequence_file = FileAccess.open(path,FileAccess.READ)
 
 func _ready():
 	add_child(song)
