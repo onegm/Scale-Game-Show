@@ -2,8 +2,11 @@ extends Area2D
 class_name Wall
 
 @onready var cutout = $Cutout
+@onready var wall = $Wall
+@onready var wall_cover = $WallCover
 @onready var outlines = $Outlines
 @onready var current_wall_detector := $CurrentWallDetector
+@onready var break_particles := $BreakParticles
 
 var postureDTO : PostureDTO
 var speed = Game.WALL_SPEED
@@ -38,6 +41,25 @@ func set_posture_from_DTO(new_posture : PostureDTO):
 	var posture_num = (postureDTO.posture + PostureDTO.wall_postures.size()) if postureDTO.direction == postureDTO.DIRECTION.RIGHT else postureDTO.posture
 	outlines.play(str(posture_num))
 	
+	set_textures()
+
+func set_textures():
+	var walls = [wall, wall_cover, $WallPieces/LeftWall, $WallPieces/RightWall]
+	var wall_texture : CompressedTexture2D
+	match postureDTO.size:
+		PostureDTO.SIZE.SMALL:
+			wall_texture = Game.FOAM_WALL_TEXTURE
+			break_particles.set_modulate(Color(0.996, 0.765, 0.231))
+		PostureDTO.SIZE.MEDIUM:
+			wall_texture = Game.BRICK_WALL_TEXTURE
+			break_particles.set_modulate(Color(0.635, 0.259, 0.329))
+		PostureDTO.SIZE.LARGE:
+			wall_texture = Game.CONCRETE_WALL_TEXTURE
+			break_particles.set_modulate(Color(0.639, 0.639, 0.639))
+	for sprite in walls:
+		sprite.texture = wall_texture
+	
+
 func set_cutout_and_outline_scale(new_scale : float):
 	new_scale = (new_scale + 2.0)/1.5
 	cutout.set_posture_scale(new_scale)
@@ -52,7 +74,7 @@ func break_wall():
 	outlines.visible = false
 	cutout.visible = false
 	$MotionParticles.emitting = false
-	$BreakParticles.emitting = true
+	break_particles.emitting = true
 	var tween = get_tree().create_tween().set_parallel(true).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_QUAD)
 	tween.tween_property($WallPieces/LeftWall, "rotation", -2, 1)
 	tween.tween_property($WallPieces/RightWall, "rotation", 2, 1)
