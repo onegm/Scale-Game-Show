@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
-[ext_resource type="Texture2D" uid="uid://chhuvnqyvlv8l" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_i5hrk"]
+[ext_resource type="Texture2D" uid="uid://d3s4rmkp4f6s0" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_i5hrk"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
-[ext_resource type="Texture2D" uid="uid://dhgoc0lfmkbn2" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_qpqur"]
-[ext_resource type="Texture2D" uid="uid://rvivd8yssjuw" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_gd7t7"]
-[ext_resource type="FontFile" uid="uid://coiisp4yxvl7u" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_jud57"]
+[ext_resource type="Texture2D" uid="uid://b1sofi46ngrh8" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_qpqur"]
+[ext_resource type="Texture2D" uid="uid://cjsbsmomjfib0" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_gd7t7"]
+[ext_resource type="FontFile" uid="uid://pn2b77ys0xk3" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_jud57"]
 [ext_resource type="Texture2D" uid="uid://bv5isetlscwdn" path="res://UI/Elements/Arrow Keys HUD ELement - All Colours.png" id="6_03f41"]
 [ext_resource type="Texture2D" uid="uid://cwqw83gkp02wk" path="res://UI/Elements/Main Menu BG.png" id="7_f57wt"]
 
@@ -18,14 +18,63 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3k7ia")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 413.0
+offset_right = 485.0
+offset_bottom = 488.0
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 24
+text = "Art & Visuals:
+Ami \"Banana Kyatto\" Kuehl
+Carlos \"Ant\" Pacheco​"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 795.0
+offset_top = 364.0
+offset_right = 1280.0
+offset_bottom = 439.0
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 24
+text = "Programming:
+​DeLo
+Omar Negm"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 500.0
+offset_right = 1350.0
+offset_bottom = 575.0
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 24
+text = "Sound & Music:
+One Million Flowers"
+horizontal_alignment = 1
+
+[node name="GameName" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 364.0
+offset_top = 50.0
+offset_right = 916.0
+offset_bottom = 187.0
+theme_override_font_sizes/normal_font_size = 100
+bbcode_enabled = true
+text = "[rainbow freq=0.3 val=1][outline_color=white][outline_size=10]Growrobics"
+fit_content = true
+autowrap_mode = 0
+
 [node name="MainMenu" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(1280, 720)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -40.0
-offset_bottom = -40.0
+offset_top = 50.0
+offset_bottom = 50.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -34,15 +83,11 @@ layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="GameName" type="RichTextLabel" parent="MainMenu/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 100
-bbcode_enabled = true
-text = "[rainbow freq=0.3 val=1][outline_color=white][outline_size=10]Growrobics"
-fit_content = true
-autowrap_mode = 0
 
-[node name="StartBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
+[node name="StartBtn3" type="TextureButton" parent="MainMenu/VBoxContainer/HBoxContainer"]
+modulate = Color(0.625907, 0.991185, 0.452437, 1)
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -53,7 +98,33 @@ texture_hover = ExtResource("4_gd7t7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/StartBtn"]
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer/StartBtn3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 50
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartBtn" type="TextureButton" parent="MainMenu/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("2_i5hrk")
+texture_pressed = ExtResource("3_qpqur")
+texture_hover = ExtResource("4_gd7t7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer/StartBtn"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,7 +139,7 @@ text = "Exercise 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartBtn2" type="TextureButton" parent="MainMenu/VBoxContainer"]
+[node name="StartBtn2" type="TextureButton" parent="MainMenu/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,7 +150,7 @@ texture_hover = ExtResource("4_gd7t7")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/StartBtn2"]
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/HBoxContainer/StartBtn2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,6 +216,9 @@ theme_override_font_sizes/font_size = 50
 text = "QUIT"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_ml36l")]
 layout_mode = 1
@@ -241,40 +315,8 @@ position = Vector2(647, 633)
 scale = Vector2(1.21091, 1.21091)
 texture = ExtResource("7_f57wt")
 
-[node name="StartBtn3" type="TextureButton" parent="."]
-modulate = Color(0.625907, 0.991185, 0.452437, 1)
-custom_minimum_size = Vector2(300, 80)
-layout_mode = 2
-offset_left = 938.0
-offset_top = 204.0
-offset_right = 1238.0
-offset_bottom = 284.0
-scale = Vector2(0.75, 0.75)
-size_flags_horizontal = 4
-focus_mode = 0
-texture_normal = ExtResource("2_i5hrk")
-texture_pressed = ExtResource("3_qpqur")
-texture_hover = ExtResource("4_gd7t7")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BtnLabel" type="Label" parent="StartBtn3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_jud57")
-theme_override_font_sizes/font_size = 50
-text = "Tutorial"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn2" to="." method="_on_start_btn_2_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/StartBtn3" to="." method="_on_start_btn_tutorial_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/HBoxContainer/StartBtn2" to="." method="_on_start_btn_2_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
-[connection signal="pressed" from="StartBtn3" to="." method="_on_start_btn_tutorial_pressed"]
