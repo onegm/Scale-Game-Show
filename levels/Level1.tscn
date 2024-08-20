@@ -1,14 +1,76 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6y1dqx8ki7a7"]
+[gd_scene load_steps=13 format=3 uid="uid://c6y1dqx8ki7a7"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
 [ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
 [ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
 [ext_resource type="Script" path="res://levels/camera.gd" id="5_vgxum"]
-[ext_resource type="Texture2D" uid="uid://b6givmv5a5qsn" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
-[ext_resource type="Texture2D" uid="uid://djw8wxkl8gjuj" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
-[ext_resource type="Texture2D" uid="uid://cpn1nyhhg4qhp" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
-[ext_resource type="Texture2D" uid="uid://6sx0l57d2umo" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
+[ext_resource type="Texture2D" uid="uid://dux4q136qp114" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
+[ext_resource type="Texture2D" uid="uid://bdcca1qcv263d" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
+[ext_resource type="Texture2D" uid="uid://4ux0jibavm5n" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
+[ext_resource type="Texture2D" uid="uid://uwhrmlopfkti" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
+
+[sub_resource type="Animation" id="Animation_wlsul"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowdBackRight:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(969.889, 370)]
+}
+
+[sub_resource type="Animation" id="Animation_xy58w"]
+resource_name = "crowd_front"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrowdFront:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(643, 373), Vector2(643, 300), Vector2(643, 373)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrowdBackLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(321, 344), Vector2(321, 370), Vector2(321, 344)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CrowdBackRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(969.889, 341.5), Vector2(969.889, 370), Vector2(969.889, 344)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2kn7a"]
+_data = {
+"RESET": SubResource("Animation_wlsul"),
+"crowd_bounce": SubResource("Animation_xy58w")
+}
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
@@ -34,57 +96,18 @@ position = Vector2(640, 360)
 position_smoothing_enabled = true
 script = ExtResource("5_vgxum")
 
-[node name="GmtkStageForeground-Lights" type="Sprite2D" parent="."]
-z_index = 1
-position = Vector2(634, 350)
-scale = Vector2(0.650926, 0.650926)
-texture = ExtResource("6_vf1aw")
+[node name="Background" type="Node2D" parent="."]
 
-[node name="GmtkStageForeground-PeopleClose" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(643, 373)
-scale = Vector2(0.668518, 0.668518)
-texture = ExtResource("7_0m83s")
-
-[node name="GmtkStageForeground-Hands" type="Sprite2D" parent="."]
-z_index = 2
-position = Vector2(649, 370)
-scale = Vector2(0.668287, 0.6625)
-texture = ExtResource("8_n13x7")
-
-[node name="GmtkStageForeground-PeopleClose2" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(321, 344)
-scale = Vector2(0.350926, 0.350926)
-texture = ExtResource("7_0m83s")
-
-[node name="GmtkStageForeground-Hands2" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(323, 347)
-scale = Vector2(0.334144, 0.33125)
-texture = ExtResource("8_n13x7")
-
-[node name="GmtkStageForeground-PeopleClose3" type="Sprite2D" parent="."]
-z_index = -2
-position = Vector2(969.889, 341.5)
-scale = Vector2(0.350926, 0.350926)
-texture = ExtResource("7_0m83s")
-
-[node name="GmtkStageForeground-Hands3" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(971.889, 344.5)
-scale = Vector2(0.334144, 0.33125)
-texture = ExtResource("8_n13x7")
-
-[node name="WallTextureBg" type="Sprite2D" parent="."]
+[node name="WallTextureBg" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
-position = Vector2(210.006, 101.25)
-scale = Vector2(0.561697, 0.561697)
+position = Vector2(0, -6.73)
+scale = Vector2(0.562, 0.562)
 texture = ExtResource("9_nmsj5")
+offset = Vector2(381, 194)
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg2" type="Sprite2D" parent="."]
+[node name="WallTextureBg2" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(210.006, 319.25)
@@ -92,7 +115,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg3" type="Sprite2D" parent="."]
+[node name="WallTextureBg3" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(638.013, 101.5)
@@ -100,7 +123,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg4" type="Sprite2D" parent="."]
+[node name="WallTextureBg4" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(638.013, 319.5)
@@ -108,7 +131,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg5" type="Sprite2D" parent="."]
+[node name="WallTextureBg5" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(1066.01, 101.5)
@@ -116,7 +139,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg6" type="Sprite2D" parent="."]
+[node name="WallTextureBg6" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(1066.01, 319.5)
@@ -124,7 +147,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg7" type="Sprite2D" parent="."]
+[node name="WallTextureBg7" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(210.006, 537.25)
@@ -132,7 +155,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg8" type="Sprite2D" parent="."]
+[node name="WallTextureBg8" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(210.006, 755.25)
@@ -140,7 +163,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg9" type="Sprite2D" parent="."]
+[node name="WallTextureBg9" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(638.013, 537.5)
@@ -148,7 +171,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg10" type="Sprite2D" parent="."]
+[node name="WallTextureBg10" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(638.013, 755.5)
@@ -156,7 +179,7 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg11" type="Sprite2D" parent="."]
+[node name="WallTextureBg11" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(1066.01, 537.5)
@@ -164,10 +187,60 @@ scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
 
-[node name="WallTextureBg12" type="Sprite2D" parent="."]
+[node name="WallTextureBg12" type="Sprite2D" parent="Background"]
 z_index = -3
 texture_repeat = 2
 position = Vector2(1066.01, 755.5)
 scale = Vector2(0.561697, 0.561697)
 texture = ExtResource("9_nmsj5")
 metadata/_edit_lock_ = true
+
+[node name="Foreground" type="Node2D" parent="."]
+
+[node name="Lights" type="Sprite2D" parent="Foreground"]
+z_index = 1
+position = Vector2(634, 350)
+scale = Vector2(0.650926, 0.650926)
+texture = ExtResource("6_vf1aw")
+
+[node name="CrowdFront" type="Sprite2D" parent="Foreground"]
+z_index = 3
+position = Vector2(643, 373)
+scale = Vector2(0.668518, 0.668518)
+texture = ExtResource("7_0m83s")
+
+[node name="CrowdArmsFront" type="Sprite2D" parent="Foreground/CrowdFront"]
+z_index = 2
+position = Vector2(8.9751, -4.48755)
+scale = Vector2(0.999654, 0.990998)
+texture = ExtResource("8_n13x7")
+
+[node name="CrowdBackLeft" type="Sprite2D" parent="Foreground"]
+z_index = -2
+position = Vector2(321, 344)
+scale = Vector2(0.350926, 0.350926)
+texture = ExtResource("7_0m83s")
+
+[node name="CrowdArmsBackLeft" type="Sprite2D" parent="Foreground/CrowdBackLeft"]
+z_index = -1
+position = Vector2(5.69916, 8.54883)
+scale = Vector2(0.952178, 0.943931)
+texture = ExtResource("8_n13x7")
+
+[node name="CrowdBackRight" type="Sprite2D" parent="Foreground"]
+z_index = -2
+position = Vector2(969.889, 370)
+scale = Vector2(0.350926, 0.350926)
+texture = ExtResource("7_0m83s")
+
+[node name="CrowdArmsBackRight" type="Sprite2D" parent="Foreground/CrowdBackRight"]
+z_index = -1
+position = Vector2(5.69922, 8.54877)
+scale = Vector2(0.952178, 0.943931)
+texture = ExtResource("8_n13x7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Foreground")
+libraries = {
+"": SubResource("AnimationLibrary_2kn7a")
+}
