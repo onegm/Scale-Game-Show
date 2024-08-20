@@ -1,8 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://bhgrhdxy65wus"]
 
-[ext_resource type="AudioStream" uid="uid://dv5wpvovjr0hd" path="res://audio/music/130bpmGenericLoop.mp3" id="1_f2mkl"]
+[ext_resource type="Script" path="res://audio/audio_manager.gd" id="1_5707d"]
 
 [node name="AudioManager" type="Node"]
+script = ExtResource("1_5707d")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_f2mkl")
+[node name="ComboNice" type="AudioStreamPlayer" parent="."]
+
+[node name="ComboGreat" type="AudioStreamPlayer" parent="."]
+
+[node name="ComboAwesome" type="AudioStreamPlayer" parent="."]
+
+[node name="ComboFire" type="AudioStreamPlayer" parent="."]
+
+[node name="ComboGetAway" type="AudioStreamPlayer" parent="."]
+
+[node name="ComboFull" type="AudioStreamPlayer" parent="."]

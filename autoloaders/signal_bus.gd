@@ -6,3 +6,5 @@ signal player_miss
 signal settings_updated
 signal song_ended
 signal final_wall_exited
+
+signal combo(combo_streak : int)

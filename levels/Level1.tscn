@@ -1,14 +1,14 @@
-[gd_scene load_steps=21 format=3 uid="uid://c6y1dqx8ki7a7"]
+[gd_scene load_steps=22 format=3 uid="uid://c6y1dqx8ki7a7"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
 [ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
 [ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
 [ext_resource type="Script" path="res://levels/camera.gd" id="5_vgxum"]
-[ext_resource type="Texture2D" uid="uid://b6givmv5a5qsn" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
-[ext_resource type="Texture2D" uid="uid://djw8wxkl8gjuj" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
-[ext_resource type="Texture2D" uid="uid://cpn1nyhhg4qhp" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
-[ext_resource type="Texture2D" uid="uid://6sx0l57d2umo" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
+[ext_resource type="Texture2D" uid="uid://dux4q136qp114" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
+[ext_resource type="Texture2D" uid="uid://bdcca1qcv263d" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
+[ext_resource type="Texture2D" uid="uid://4ux0jibavm5n" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
+[ext_resource type="Texture2D" uid="uid://uwhrmlopfkti" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
 [ext_resource type="Texture2D" uid="uid://bgx1l0bolttpo" path="res://levels/kitbash assets/Color/posters_asset.png" id="10_g87mc"]
 [ext_resource type="Texture2D" uid="uid://34iy8jvdruc5" path="res://levels/kitbash assets/Color/light_asset.png" id="10_wbukb"]
 [ext_resource type="Texture2D" uid="uid://udyo2rifv0nh" path="res://levels/kitbash assets/Color/recording_screen_asset.png" id="11_s5erd"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bv1mhr6qaigcd" path="res://levels/kitbash assets/Color/extinguisher_asset.png" id="14_7bbgl"]
 [ext_resource type="Texture2D" uid="uid://c3hdp0n8adaxl" path="res://levels/kitbash assets/Color/signal_2_asset.png" id="15_ait43"]
 [ext_resource type="Texture2D" uid="uid://2037q2mpy76d" path="res://levels/kitbash assets/Color/signal_asset.png" id="16_a78b6"]
+[ext_resource type="PackedScene" uid="uid://cku4qu8jc8vv2" path="res://UI/instructions/Instructions.tscn" id="18_4uuqg"]
 
 [sub_resource type="Animation" id="Animation_wlsul"]
 length = 0.001
@@ -97,7 +98,20 @@ position = Vector2(355, 537)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="GUI" parent="UI" instance=ExtResource("5_rg4bk")]
+mouse_filter = 1
 metadata/_edit_lock_ = true
+
+[node name="Instructions" parent="UI" instance=ExtResource("18_4uuqg")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 7.0
+offset_bottom = 3.0
+size_flags_horizontal = 4
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(640, 360)
@@ -248,39 +262,35 @@ position = Vector2(5.69922, 8.54877)
 scale = Vector2(0.952178, 0.943931)
 texture = ExtResource("8_n13x7")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Foreground")
-libraries = {
-"": SubResource("AnimationLibrary_2kn7a")
-}
+[node name="EnvironmentAssets" type="Node2D" parent="."]
 
-[node name="PostersAsset" type="Sprite2D" parent="."]
+[node name="PostersAsset" type="Sprite2D" parent="EnvironmentAssets"]
 modulate = Color(0.821789, 0.821789, 0.821789, 1)
 position = Vector2(187, 290)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("10_g87mc")
 
-[node name="RecordingScreenAsset" type="Sprite2D" parent="."]
+[node name="RecordingScreenAsset" type="Sprite2D" parent="EnvironmentAssets"]
 modulate = Color(1, 1, 1, 0.392157)
 z_index = 5
 position = Vector2(645, 361)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("11_s5erd")
 
-[node name="SwithAsset" type="Sprite2D" parent="."]
+[node name="SwithAsset" type="Sprite2D" parent="EnvironmentAssets"]
 z_index = -4
 position = Vector2(1246, 432)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_jeh81")
 flip_h = true
 
-[node name="SwithAsset2" type="Sprite2D" parent="."]
+[node name="SwithAsset2" type="Sprite2D" parent="EnvironmentAssets"]
 z_index = -4
 position = Vector2(30, 432)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("12_jeh81")
 
-[node name="CameraAsset" type="Sprite2D" parent="."]
+[node name="CameraAsset" type="Sprite2D" parent="EnvironmentAssets"]
 modulate = Color(0.823529, 0.823529, 0.823529, 1)
 position = Vector2(1250, 248)
 rotation = -0.371755
@@ -288,41 +298,47 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("13_rlcsh")
 flip_h = true
 
-[node name="ExtinguisherAsset" type="Sprite2D" parent="."]
+[node name="ExtinguisherAsset" type="Sprite2D" parent="EnvironmentAssets"]
 z_index = -4
 position = Vector2(94, 501)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("14_7bbgl")
 
-[node name="PostersAsset2" type="Sprite2D" parent="."]
+[node name="PostersAsset2" type="Sprite2D" parent="EnvironmentAssets"]
 modulate = Color(0.823529, 0.827451, 0.827451, 1)
 z_index = -4
 position = Vector2(1208, 331)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("10_g87mc")
 
-[node name="Signal2Asset" type="Sprite2D" parent="."]
+[node name="Signal2Asset" type="Sprite2D" parent="EnvironmentAssets"]
 position = Vector2(48, 660)
 rotation = 1.5708
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_ait43")
 
-[node name="SignalAsset" type="Sprite2D" parent="."]
+[node name="SignalAsset" type="Sprite2D" parent="EnvironmentAssets"]
 modulate = Color(0.823529, 0.823529, 0.823529, 1)
 z_index = -4
 position = Vector2(967, 487)
 scale = Vector2(0.65, 0.65)
 texture = ExtResource("16_a78b6")
 
-[node name="LightAsset" type="Sprite2D" parent="."]
+[node name="LightAsset" type="Sprite2D" parent="EnvironmentAssets"]
 position = Vector2(34, 538)
 rotation = 1.23077
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_wbukb")
 
-[node name="LightAsset2" type="Sprite2D" parent="."]
+[node name="LightAsset2" type="Sprite2D" parent="EnvironmentAssets"]
 position = Vector2(1245, 539)
 rotation = -1.21055
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("10_wbukb")
 flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Foreground")
+libraries = {
+"": SubResource("AnimationLibrary_2kn7a")
+}
