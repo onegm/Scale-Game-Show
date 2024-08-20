@@ -46,19 +46,19 @@ func _unhandled_input(_event: InputEvent) -> void:
 
 func on_wall_hit(wall_pose : PostureDTO) -> void:
 	if last_pose_timer <= 50:
-		score = "Perfect"
+		score = "Perfect!!"
 	elif last_pose_timer <= 100:
-		score = "Great"
+		score = "Great!"
 	else:
-		score = "Normal"
+		score = "OK"
 	
 	if wall_pose.equals(player_state):
 		match score:
-			"Perfect":
+			"Perfect!!":
 				point_counter += (200 + (5 * combo_meter))
-			"Great":
+			"Great!":
 				point_counter += (100 + (2 * combo_meter))
-			"Normal":
+			"OK":
 				point_counter += (50 + (combo_meter))
 		combo_meter += 1
 		SignalBus.score_update.emit(point_counter, combo_meter, score)

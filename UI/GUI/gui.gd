@@ -1,8 +1,8 @@
 extends Control
 
-@onready var PointsLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/PointsLabel
-@onready var ComboLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/ComboLabel
-@onready var TimingLabel: Label = $VBoxContainer/HighContainer/ScoreContainer/TimingLabel
+@onready var PointsLabel: Label = $PointsLabel
+@onready var ComboLabel: Label = $ComboLabel
+@onready var TimingLabel: Label = $TimingLabel
 
 @onready var SizeUpRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/SizeContainer/SizeUpRect
 @onready var SizeDownRect: TextureRect = $VBoxContainer/LowContainer/SizeDirContainer/SizeContainer/SizeDownRect

@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://76mxnx5v1b1o"]
+[gd_scene load_steps=7 format=3 uid="uid://76mxnx5v1b1o"]
 
 [ext_resource type="Script" path="res://UI/settings_menu/settings_menu.gd" id="1_fa30v"]
-[ext_resource type="Texture2D" uid="uid://cngfu4bdcnoal" path="res://UI/Elements/HUD Element - Dialog.png" id="2_d58g8"]
-[ext_resource type="FontFile" uid="uid://bd7rkvyp5tjov" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="2_slhpp"]
-[ext_resource type="Texture2D" uid="uid://bcxl2gwwat2bx" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="3_rsaca"]
-[ext_resource type="Texture2D" uid="uid://c6nisk2hwp4gy" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="4_ekim1"]
-[ext_resource type="Texture2D" uid="uid://bltt1ks3vnk8d" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="5_ipk0k"]
+[ext_resource type="FontFile" uid="uid://coiisp4yxvl7u" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="2_slhpp"]
+[ext_resource type="Texture2D" uid="uid://chhuvnqyvlv8l" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="3_rsaca"]
+[ext_resource type="Texture2D" uid="uid://dhgoc0lfmkbn2" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="4_ekim1"]
+[ext_resource type="Texture2D" uid="uid://rvivd8yssjuw" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="5_ipk0k"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0kwom"]
-texture = ExtResource("2_d58g8")
-region_rect = Rect2(28, 37, 1044, 1026)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmruq"]
+bg_color = Color(0.154876, 0.154876, 0.154876, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -31,7 +33,7 @@ grow_vertical = 2
 [node name="Panel" type="Panel" parent="CenterContainer"]
 custom_minimum_size = Vector2(800, 500)
 layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_0kwom")
+theme_override_styles/panel = SubResource("StyleBoxFlat_tmruq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel"]
 layout_mode = 1
@@ -55,7 +57,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_slhpp")
 theme_override_font_sizes/font_size = 40
-text = "Volume"
+text = "Main Audio"
 horizontal_alignment = 1
 vertical_alignment = 1
 

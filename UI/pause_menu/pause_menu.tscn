@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lw2ju"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_3ctr5"]
-[ext_resource type="Texture2D" uid="uid://cngfu4bdcnoal" path="res://UI/Elements/HUD Element - Dialog.png" id="2_33jau"]
-[ext_resource type="FontFile" uid="uid://bd7rkvyp5tjov" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="2_yeq18"]
-[ext_resource type="Texture2D" uid="uid://bcxl2gwwat2bx" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="3_0a4rf"]
-[ext_resource type="Texture2D" uid="uid://c6nisk2hwp4gy" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="4_g207c"]
-[ext_resource type="Texture2D" uid="uid://bltt1ks3vnk8d" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="5_l7oql"]
+[ext_resource type="Texture2D" uid="uid://bdcgkj0lb2xno" path="res://UI/Elements/HUD Element - Dialog.png" id="2_33jau"]
+[ext_resource type="FontFile" uid="uid://coiisp4yxvl7u" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="2_yeq18"]
+[ext_resource type="Texture2D" uid="uid://chhuvnqyvlv8l" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="3_0a4rf"]
+[ext_resource type="Texture2D" uid="uid://dhgoc0lfmkbn2" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="4_g207c"]
+[ext_resource type="Texture2D" uid="uid://rvivd8yssjuw" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="5_l7oql"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4qwvp"]
 texture = ExtResource("2_33jau")
