@@ -89,9 +89,9 @@ size = Vector2(178, 536)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.275281, 0.296703), 0.0, 0.0, 0, 0, Vector2(0.769663, 0.89011), 0.0, 0.0, 0, 0, Vector2(1, 0.032967), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="Gradient" id="Gradient_c72tj"]
-offsets = PackedFloat32Array(0.0266667, 0.453333, 0.946667)
-colors = PackedColorArray(0.65098, 0.278431, 0.34902, 1, 0.470588, 0.180392, 0.239216, 1, 0.345098, 0.0823529, 0.101961, 1)
+[sub_resource type="Gradient" id="Gradient_x80du"]
+offsets = PackedFloat32Array(0, 0.466667, 0.986667)
+colors = PackedColorArray(0.194349, 0.194349, 0.194349, 1, 0.564962, 0.564962, 0.564962, 1, 1, 1, 1, 1)
 
 [node name="Wall" type="Area2D"]
 scale = Vector2(0.5, 0.5)
@@ -178,4 +178,4 @@ initial_velocity_min = 300.0
 initial_velocity_max = 600.0
 scale_amount_min = 2.0
 scale_amount_max = 10.0
-color_initial_ramp = SubResource("Gradient_c72tj")
+color_initial_ramp = SubResource("Gradient_x80du")
