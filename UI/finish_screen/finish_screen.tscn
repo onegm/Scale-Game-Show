@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cmp7y8ifww75q"]
+[gd_scene load_steps=7 format=3 uid="uid://cmp7y8ifww75q"]
 
 [ext_resource type="Script" path="res://UI/finish_screen/finish_screen.gd" id="1_od5ko"]
+[ext_resource type="Texture2D" uid="uid://bcxl2gwwat2bx" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_cg4do"]
+[ext_resource type="Texture2D" uid="uid://c6nisk2hwp4gy" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_ip7f0"]
+[ext_resource type="Texture2D" uid="uid://bltt1ks3vnk8d" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_ogvp7"]
+[ext_resource type="FontFile" uid="uid://bd7rkvyp5tjov" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_vqqx8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tmj57"]
 bg_color = Color(0.154876, 0.154876, 0.154876, 1)
@@ -43,6 +47,7 @@ alignment = 1
 
 [node name="ResultLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
 theme_override_font_sizes/font_size = 100
 text = "SUCCESS"
 horizontal_alignment = 1
@@ -53,6 +58,7 @@ layout_mode = 2
 
 [node name="PointsLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ScoreContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
 theme_override_font_sizes/font_size = 30
 text = "Points: 000"
 horizontal_alignment = 1
@@ -60,6 +66,7 @@ vertical_alignment = 1
 
 [node name="MaxComboLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ScoreContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
 theme_override_font_sizes/font_size = 30
 text = "Max Combo: 000"
 horizontal_alignment = 1
@@ -70,29 +77,83 @@ layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="NextBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="NextBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Next Level"
+texture_normal = ExtResource("2_cg4do")
+texture_pressed = ExtResource("3_ip7f0")
+texture_hover = ExtResource("4_ogvp7")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="AgainBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-focus_mode = 0
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer/NextBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
 theme_override_font_sizes/font_size = 50
-text = "Try Again"
+text = "NEXT LEVEL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ExitBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="AgainBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+texture_normal = ExtResource("2_cg4do")
+texture_pressed = ExtResource("3_ip7f0")
+texture_hover = ExtResource("4_ogvp7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/LevelOptContainer/AgainBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
 theme_override_font_sizes/font_size = 50
-text = "Exit"
+text = "TRY AGAIN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("2_cg4do")
+texture_pressed = ExtResource("3_ip7f0")
+texture_hover = ExtResource("4_ogvp7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ExitBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_vqqx8")
+theme_override_font_sizes/font_size = 50
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/LevelOptContainer/NextBtn" to="." method="_on_next_btn_pressed"]
 [connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/LevelOptContainer/AgainBtn" to="." method="_on_again_btn_pressed"]

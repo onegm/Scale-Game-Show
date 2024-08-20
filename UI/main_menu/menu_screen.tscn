@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cc838hd7f3grk"]
+[gd_scene load_steps=9 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
-[ext_resource type="Texture2D" uid="uid://deek3my7ebqq6" path="res://UI/Elements/Play Button HUD element.png" id="2_fxysb"]
+[ext_resource type="Texture2D" uid="uid://bcxl2gwwat2bx" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_i5hrk"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
-[ext_resource type="Texture2D" uid="uid://bqlriiilq6r1o" path="res://UI/Elements/Settings Button HUD element.png" id="3_twsxa"]
-[ext_resource type="Texture2D" uid="uid://c38xwex44fx2f" path="res://UI/Elements/Quit Button HUD element.png" id="4_uy6kd"]
+[ext_resource type="Texture2D" uid="uid://c6nisk2hwp4gy" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_qpqur"]
+[ext_resource type="Texture2D" uid="uid://bltt1ks3vnk8d" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_gd7t7"]
+[ext_resource type="FontFile" uid="uid://bd7rkvyp5tjov" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_jud57"]
 [ext_resource type="Texture2D" uid="uid://bv5isetlscwdn" path="res://UI/Elements/Arrow Keys HUD ELement - All Colours.png" id="6_03f41"]
 [ext_resource type="Texture2D" uid="uid://cwqw83gkp02wk" path="res://UI/Elements/Main Menu BG.png" id="7_f57wt"]
 
@@ -44,27 +45,78 @@ custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("2_fxysb")
+texture_normal = ExtResource("2_i5hrk")
+texture_pressed = ExtResource("3_qpqur")
+texture_hover = ExtResource("4_gd7t7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/StartBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("3_twsxa")
+texture_normal = ExtResource("2_i5hrk")
+texture_pressed = ExtResource("3_qpqur")
+texture_hover = ExtResource("4_gd7t7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/SettingsBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="QuitBtn" type="TextureButton" parent="MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-texture_normal = ExtResource("4_uy6kd")
+texture_normal = ExtResource("2_i5hrk")
+texture_pressed = ExtResource("3_qpqur")
+texture_hover = ExtResource("4_gd7t7")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/QuitBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_ml36l")]
 layout_mode = 1

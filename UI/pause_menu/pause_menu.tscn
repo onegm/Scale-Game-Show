@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1wjv5t2mij27"]
+[gd_scene load_steps=8 format=3 uid="uid://c1wjv5t2mij27"]
 
 [ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_lw2ju"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_3ctr5"]
+[ext_resource type="FontFile" uid="uid://bd7rkvyp5tjov" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="2_yeq18"]
+[ext_resource type="Texture2D" uid="uid://bcxl2gwwat2bx" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="3_0a4rf"]
+[ext_resource type="Texture2D" uid="uid://c6nisk2hwp4gy" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="4_g207c"]
+[ext_resource type="Texture2D" uid="uid://bltt1ks3vnk8d" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="5_l7oql"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7obs"]
 bg_color = Color(0.154876, 0.154876, 0.154876, 1)
@@ -45,34 +49,89 @@ alignment = 1
 
 [node name="PauseLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_yeq18")
 theme_override_font_sizes/font_size = 100
 text = "PAUSE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="CloseBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 50
-text = "Resume"
+texture_normal = ExtResource("3_0a4rf")
+texture_pressed = ExtResource("4_g207c")
+texture_hover = ExtResource("5_l7oql")
+ignore_texture_size = true
+stretch_mode = 0
 
-[node name="SettingsBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
-layout_mode = 2
-size_flags_horizontal = 4
-focus_mode = 0
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/CloseBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yeq18")
 theme_override_font_sizes/font_size = 50
-text = "Settings"
+text = "RESUME"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="ExitBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+[node name="SettingsBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
 layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
+texture_normal = ExtResource("3_0a4rf")
+texture_pressed = ExtResource("4_g207c")
+texture_hover = ExtResource("5_l7oql")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/SettingsBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yeq18")
 theme_override_font_sizes/font_size = 50
-text = "Exit"
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitBtn" type="TextureButton" parent="CenterContainer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("3_0a4rf")
+texture_pressed = ExtResource("4_g207c")
+texture_hover = ExtResource("5_l7oql")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="CenterContainer/Panel/VBoxContainer/ExitBtn"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_yeq18")
+theme_override_font_sizes/font_size = 50
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_3ctr5")]
 layout_mode = 1
