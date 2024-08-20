@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cc838hd7f3grk"]
+[gd_scene load_steps=7 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
 [ext_resource type="Texture2D" uid="uid://deek3my7ebqq6" path="res://UI/Elements/Play Button HUD element.png" id="2_fxysb"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
 [ext_resource type="Texture2D" uid="uid://bqlriiilq6r1o" path="res://UI/Elements/Settings Button HUD element.png" id="3_twsxa"]
 [ext_resource type="Texture2D" uid="uid://c38xwex44fx2f" path="res://UI/Elements/Quit Button HUD element.png" id="4_uy6kd"]
+[ext_resource type="Texture2D" uid="uid://bv5isetlscwdn" path="res://UI/Elements/Arrow Keys HUD ELement - All Colours.png" id="6_03f41"]
 
 [node name="MenuScreen" type="Control"]
 layout_mode = 3
@@ -68,6 +69,90 @@ stretch_mode = 0
 layout_mode = 1
 offset_top = 720.0
 offset_bottom = 720.0
+
+[node name="ArrowKeysHudELement-AllColours" type="Sprite2D" parent="."]
+position = Vector2(134.5, 690)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(395.752, 244.387, 95.8678, 158.389)
+
+[node name="ArrowKeysHudELement-AllColours2" type="Sprite2D" parent="."]
+position = Vector2(345.5, 673)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(214.67, 49.7273, 130.579, 186.777)
+
+[node name="ArrowKeysHudELement-AllColours3" type="Sprite2D" parent="."]
+position = Vector2(11.5, 683)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(2.27315, 214.67, 153.719, 199.174)
+
+[node name="ArrowKeysHudELement-AllColours4" type="Sprite2D" parent="."]
+position = Vector2(240.5, 712)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(211.555, 396.446, 134.863, 113.658)
+
+[node name="ArrowKeysHudELement-AllColours5" type="Sprite2D" parent="."]
+position = Vector2(597, 686.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(395.752, 244.387, 95.8678, 158.389)
+
+[node name="ArrowKeysHudELement-AllColours6" type="Sprite2D" parent="."]
+position = Vector2(808, 669.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(214.67, 49.7273, 130.579, 186.777)
+
+[node name="ArrowKeysHudELement-AllColours7" type="Sprite2D" parent="."]
+position = Vector2(474, 679.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(2.27315, 214.67, 153.719, 199.174)
+
+[node name="ArrowKeysHudELement-AllColours8" type="Sprite2D" parent="."]
+position = Vector2(703, 708.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(211.555, 396.446, 134.863, 113.658)
+
+[node name="ArrowKeysHudELement-AllColours9" type="Sprite2D" parent="."]
+position = Vector2(1059, 683.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(395.752, 244.387, 95.8678, 158.389)
+
+[node name="ArrowKeysHudELement-AllColours10" type="Sprite2D" parent="."]
+position = Vector2(1270, 666.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(214.67, 49.7273, 130.579, 186.777)
+
+[node name="ArrowKeysHudELement-AllColours11" type="Sprite2D" parent="."]
+position = Vector2(936, 676.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(2.27315, 214.67, 153.719, 199.174)
+
+[node name="ArrowKeysHudELement-AllColours12" type="Sprite2D" parent="."]
+position = Vector2(1165, 705.419)
+scale = Vector2(1, 0.983)
+texture = ExtResource("6_03f41")
+region_enabled = true
+region_rect = Rect2(211.555, 396.446, 134.863, 113.658)
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]

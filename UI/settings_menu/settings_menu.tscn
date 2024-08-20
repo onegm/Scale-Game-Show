@@ -68,7 +68,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 focus_mode = 0
 theme_override_font_sizes/font_size = 40
-text = "Controls on the top"
+text = " Invert HUD"
 alignment = 1
 
 [node name="CloseBtn" type="Button" parent="CenterContainer/Panel/VBoxContainer"]
