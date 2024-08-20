@@ -12,9 +12,9 @@ var distance : float
 var time_sequence : FloatIterator
 
 func _init(sequence_num : int):
-	wall_sequence_path += str(sequence_num) + ".gd"
-	assert(ResourceLoader.exists(wall_sequence_path), "RESOURCE NOT FOUND: " + wall_sequence_path)
-	wall_sequence = load(wall_sequence_path).new()
+	var path = wall_sequence_path + str(sequence_num) + ".gd"
+	assert(ResourceLoader.exists(path), "RESOURCE NOT FOUND: " + path)
+	wall_sequence = load(path).new()
 
 func spawn_wall() -> Wall:
 	var new_wall = wall_scene.instantiate()
