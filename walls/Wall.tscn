@@ -99,13 +99,16 @@ collision_layer = 0
 script = ExtResource("1_skayl")
 
 [node name="Cutout" parent="." instance=ExtResource("2_7uj5q")]
+modulate = Color(0.886275, 0.611765, 1, 1)
 
 [node name="Wall" type="Sprite2D" parent="."]
+modulate = Color(0.886275, 0.611765, 1, 1)
 scale = Vector2(0.23, 0.25)
 texture = ExtResource("3_pjrlj")
 offset = Vector2(-150, -1260)
 
 [node name="WallCover" type="Polygon2D" parent="."]
+modulate = Color(0.886275, 0.611765, 1, 1)
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1995, -2665)
 texture = ExtResource("3_pjrlj")
@@ -114,9 +117,11 @@ uv = PackedVector2Array(2110, 45, 2120, 2790, 3330, 2795, 3300, 10)
 
 [node name="WallPieces" type="Node2D" parent="."]
 visible = false
+modulate = Color(0.886275, 0.611765, 1, 1)
 position = Vector2(10, 0)
 
 [node name="LeftWall" type="Polygon2D" parent="WallPieces"]
+modulate = Color(0.886275, 0.611765, 1, 1)
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1992, -2665)
 texture = ExtResource("3_pjrlj")
@@ -124,6 +129,7 @@ polygon = PackedVector2Array(2365.38, 76.9231, 2103.85, 338.462, 2369.23, 600, 2
 uv = PackedVector2Array(2365.38, 76.9231, 2103.85, 338.462, 2369.23, 600, 2103.85, 861.538, 2365.38, 1111.54, 2103.85, 1384.62, 2373.08, 1650, 2096.15, 1903.85, 2361.54, 2161.54, 2107.69, 2438.46, 2384.62, 2700, 365.385, 2715.38, 315.385, -26.9231, 2376.92, -26.9231)
 
 [node name="RightWall" type="Polygon2D" parent="WallPieces"]
+modulate = Color(0.886275, 0.611765, 1, 1)
 scale = Vector2(0.23, 0.25)
 offset = Vector2(-1992, -2665)
 texture = ExtResource("3_pjrlj")

@@ -1,13 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5bg2p28cloq2"]
 
-[ext_resource type="Texture2D" uid="uid://dth8yjod74w8r" path="res://levels/screenshot test.png" id="1_kdslq"]
+[ext_resource type="Texture2D" uid="uid://dfhdo87gijsgo" path="res://levels/kitbash assets/Color/flat_floor_asset.png" id="1_klgjp"]
 
 [node name="LevelBackground" type="Node2D"]
 
-[node name="Floor" type="Polygon2D" parent="."]
-position = Vector2(680, 617)
-scale = Vector2(0.507064, 0.397717)
-offset = Vector2(-2250, -2900)
-texture = ExtResource("1_kdslq")
-polygon = PackedVector2Array(746.429, 2666.67, 807.143, 2675, 889.286, 2675, 992.857, 2675, 1133.33, 2670.24, 1152.38, 2679.76, 1208.33, 2677.38, 1311.9, 2673.81, 3591.67, 2667.86, 3596.43, 3184.52, 747.619, 3185.71)
-uv = PackedVector2Array(746.429, 2666.67, 807.143, 2675, 889.286, 2675, 992.857, 2675, 1133.33, 2670.24, 1152.38, 2679.76, 1208.33, 2677.38, 1311.9, 2673.81, 3591.67, 2667.86, 3596.43, 3184.52, 747.619, 3185.71)
+[node name="FlatFloorAsset" type="Sprite2D" parent="."]
+position = Vector2(655, 661)
+scale = Vector2(0.503098, 0.503098)
+texture = ExtResource("1_klgjp")

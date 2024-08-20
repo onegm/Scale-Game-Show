@@ -1,14 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6y1dqx8ki7a7"]
+[gd_scene load_steps=21 format=3 uid="uid://c6y1dqx8ki7a7"]
 
 [ext_resource type="Script" path="res://levels/level.gd" id="1_bx0cw"]
 [ext_resource type="PackedScene" uid="uid://c150wmemgs4sn" path="res://player/player.tscn" id="1_c3ycx"]
 [ext_resource type="PackedScene" uid="uid://c5bg2p28cloq2" path="res://environment/LevelBackground.tscn" id="2_qthyg"]
 [ext_resource type="PackedScene" uid="uid://bmrollmi4tdrv" path="res://UI/GUI/gui.tscn" id="5_rg4bk"]
 [ext_resource type="Script" path="res://levels/camera.gd" id="5_vgxum"]
-[ext_resource type="Texture2D" uid="uid://dux4q136qp114" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
-[ext_resource type="Texture2D" uid="uid://bdcca1qcv263d" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
-[ext_resource type="Texture2D" uid="uid://4ux0jibavm5n" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
-[ext_resource type="Texture2D" uid="uid://uwhrmlopfkti" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
+[ext_resource type="Texture2D" uid="uid://b6givmv5a5qsn" path="res://UI/Elements/GMTK Stage Foreground - Lights.png" id="6_vf1aw"]
+[ext_resource type="Texture2D" uid="uid://djw8wxkl8gjuj" path="res://UI/Elements/GMTK Stage Foreground - People Close.png" id="7_0m83s"]
+[ext_resource type="Texture2D" uid="uid://cpn1nyhhg4qhp" path="res://UI/Elements/GMTK Stage Foreground - Hands.png" id="8_n13x7"]
+[ext_resource type="Texture2D" uid="uid://6sx0l57d2umo" path="res://environment/bg_assets/color/wall_texture_bg.png" id="9_nmsj5"]
+[ext_resource type="Texture2D" uid="uid://bgx1l0bolttpo" path="res://levels/kitbash assets/Color/posters_asset.png" id="10_g87mc"]
+[ext_resource type="Texture2D" uid="uid://34iy8jvdruc5" path="res://levels/kitbash assets/Color/light_asset.png" id="10_wbukb"]
+[ext_resource type="Texture2D" uid="uid://udyo2rifv0nh" path="res://levels/kitbash assets/Color/recording_screen_asset.png" id="11_s5erd"]
+[ext_resource type="Texture2D" uid="uid://crbb83u4qdlcp" path="res://levels/kitbash assets/Color/swith_asset.png" id="12_jeh81"]
+[ext_resource type="Texture2D" uid="uid://co5nik3nlny44" path="res://levels/kitbash assets/Color/camera_asset.png" id="13_rlcsh"]
+[ext_resource type="Texture2D" uid="uid://bv1mhr6qaigcd" path="res://levels/kitbash assets/Color/extinguisher_asset.png" id="14_7bbgl"]
+[ext_resource type="Texture2D" uid="uid://c3hdp0n8adaxl" path="res://levels/kitbash assets/Color/signal_2_asset.png" id="15_ait43"]
+[ext_resource type="Texture2D" uid="uid://2037q2mpy76d" path="res://levels/kitbash assets/Color/signal_asset.png" id="16_a78b6"]
 
 [sub_resource type="Animation" id="Animation_wlsul"]
 length = 0.001
@@ -28,7 +36,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_xy58w"]
 resource_name = "crowd_front"
 length = 0.8
-loop_mode = 1
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -36,10 +44,10 @@ tracks/0/path = NodePath("CrowdFront:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(643, 373), Vector2(643, 300), Vector2(643, 373)]
+"values": [Vector2(643, 373), Vector2(643, 380)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -48,10 +56,10 @@ tracks/1/path = NodePath("CrowdBackLeft:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(321, 344), Vector2(321, 370), Vector2(321, 344)]
+"values": [Vector2(321, 354), Vector2(321, 344)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -60,10 +68,10 @@ tracks/2/path = NodePath("CrowdBackRight:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(969.889, 341.5), Vector2(969.889, 370), Vector2(969.889, 344)]
+"values": [Vector2(969.889, 351.5), Vector2(969.889, 341.5)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2kn7a"]
@@ -97,6 +105,7 @@ position_smoothing_enabled = true
 script = ExtResource("5_vgxum")
 
 [node name="Background" type="Node2D" parent="."]
+z_index = -1
 
 [node name="WallTextureBg" type="Sprite2D" parent="Background"]
 z_index = -3
@@ -205,7 +214,7 @@ texture = ExtResource("6_vf1aw")
 
 [node name="CrowdFront" type="Sprite2D" parent="Foreground"]
 z_index = 3
-position = Vector2(643, 373)
+position = Vector2(643, 379.309)
 scale = Vector2(0.668518, 0.668518)
 texture = ExtResource("7_0m83s")
 
@@ -217,7 +226,7 @@ texture = ExtResource("8_n13x7")
 
 [node name="CrowdBackLeft" type="Sprite2D" parent="Foreground"]
 z_index = -2
-position = Vector2(321, 344)
+position = Vector2(321, 344.987)
 scale = Vector2(0.350926, 0.350926)
 texture = ExtResource("7_0m83s")
 
@@ -244,3 +253,76 @@ root_node = NodePath("../Foreground")
 libraries = {
 "": SubResource("AnimationLibrary_2kn7a")
 }
+
+[node name="PostersAsset" type="Sprite2D" parent="."]
+modulate = Color(0.821789, 0.821789, 0.821789, 1)
+position = Vector2(187, 290)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_g87mc")
+
+[node name="RecordingScreenAsset" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.392157)
+z_index = 5
+position = Vector2(645, 361)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("11_s5erd")
+
+[node name="SwithAsset" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(1246, 432)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_jeh81")
+flip_h = true
+
+[node name="SwithAsset2" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(30, 432)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_jeh81")
+
+[node name="CameraAsset" type="Sprite2D" parent="."]
+modulate = Color(0.823529, 0.823529, 0.823529, 1)
+position = Vector2(1250, 248)
+rotation = -0.371755
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("13_rlcsh")
+flip_h = true
+
+[node name="ExtinguisherAsset" type="Sprite2D" parent="."]
+z_index = -4
+position = Vector2(94, 501)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_7bbgl")
+
+[node name="PostersAsset2" type="Sprite2D" parent="."]
+modulate = Color(0.823529, 0.827451, 0.827451, 1)
+z_index = -4
+position = Vector2(1208, 331)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_g87mc")
+
+[node name="Signal2Asset" type="Sprite2D" parent="."]
+position = Vector2(48, 660)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_ait43")
+
+[node name="SignalAsset" type="Sprite2D" parent="."]
+modulate = Color(0.823529, 0.823529, 0.823529, 1)
+z_index = -4
+position = Vector2(967, 487)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("16_a78b6")
+
+[node name="LightAsset" type="Sprite2D" parent="."]
+position = Vector2(34, 538)
+rotation = 1.23077
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_wbukb")
+
+[node name="LightAsset2" type="Sprite2D" parent="."]
+position = Vector2(1245, 539)
+rotation = -1.21055
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("10_wbukb")
+flip_h = true

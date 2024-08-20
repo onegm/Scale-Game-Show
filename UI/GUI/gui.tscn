@@ -55,29 +55,44 @@ layout_mode = 2
 alignment = 1
 
 [node name="ScoreContainer" type="HBoxContainer" parent="VBoxContainer/HighContainer"]
+modulate = Color(1, 1, 1, 0.490196)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 30
 alignment = 1
+
+[node name="PointsLabel2" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nuxe0")
+theme_override_font_sizes/font_size = 30
+text = "SCORE"
+horizontal_alignment = 1
 
 [node name="PointsLabel" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nuxe0")
 theme_override_font_sizes/font_size = 30
-text = "TEST POINTS"
+text = "0"
 horizontal_alignment = 1
 
-[node name="ComboLabel" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
+[node name="ComboLabel2" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nuxe0")
 theme_override_font_sizes/font_size = 30
 text = "COMBO"
 horizontal_alignment = 1
 
+[node name="ComboLabel" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_nuxe0")
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
 [node name="TimingLabel" type="Label" parent="VBoxContainer/HighContainer/ScoreContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_nuxe0")
 theme_override_font_sizes/font_size = 30
-text = "TIMING"
 horizontal_alignment = 1
 
 [node name="LowContainer" type="HBoxContainer" parent="VBoxContainer"]
