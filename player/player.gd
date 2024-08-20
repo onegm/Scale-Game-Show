@@ -61,6 +61,7 @@ func on_wall_hit(wall_pose : PostureDTO) -> void:
 			"OK":
 				point_counter += (50 + (combo_meter))
 		combo_meter += 1
+		SignalBus.combo.emit(combo_meter)
 		SignalBus.score_update.emit(point_counter, combo_meter, score)
 		$Anim.play("right_pose")
 	else:
