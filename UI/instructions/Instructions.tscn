@@ -1,0 +1,136 @@
+[gd_scene load_steps=7 format=3 uid="uid://cku4qu8jc8vv2"]
+
+[ext_resource type="FontFile" uid="uid://coiisp4yxvl7u" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="1_0sfw8"]
+[ext_resource type="Script" path="res://UI/instructions/instructions.gd" id="1_40864"]
+[ext_resource type="AudioStream" uid="uid://cswk07tl3n32y" path="res://UI/instructions/Intro1.wav" id="3_rh8q4"]
+[ext_resource type="AudioStream" uid="uid://dpi5i3nbibvas" path="res://UI/instructions/Intro2.wav" id="4_cyvou"]
+[ext_resource type="AudioStream" uid="uid://cqmiblb7e5ish" path="res://UI/instructions/Intro3.wav" id="5_mgif8"]
+
+[sub_resource type="Theme" id="Theme_sou0s"]
+default_font = ExtResource("1_0sfw8")
+default_font_size = 30
+
+[node name="Instructions" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_40864")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.617454, 0.617455, 0.617455, 0.513726)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -225.0
+offset_right = 350.0
+offset_bottom = 225.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text1" type="RichTextLabel" parent="."]
+modulate = Color(0.361077, 0.186424, 0.701012, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -199.0
+offset_right = 335.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_0sfw8")
+theme_override_font_sizes/normal_font_size = 30
+text = "Welcome to Growrobics, America's number 1 exercise game show where YOU could be the biggest loser in the room!
+
+
+
+Today's contestant is Ben Bigmann from Detroit, Michigan!"
+fit_content = true
+
+[node name="Text2" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color(0.361077, 0.186424, 0.701012, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -199.0
+offset_right = 335.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_0sfw8")
+theme_override_font_sizes/normal_font_size = 30
+text = "We've equipped him with a headband outfitted with technology stolen from the US Military who's calls we refuse to return! It'll allow him to grow and shrink himself using the W and S keys! "
+fit_content = true
+
+[node name="Text3" type="RichTextLabel" parent="."]
+visible = false
+modulate = Color(0.361077, 0.186424, 0.701012, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -199.0
+offset_right = 335.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/normal_font = ExtResource("1_0sfw8")
+theme_override_font_sizes/normal_font_size = 30
+text = "Using that, plus the A and D keys to turn and the Arrow Keys to select a pose, he's going to have to fit through as many cutouts as he can to become -- The Biggest Loser Here!"
+fit_content = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 267.0
+offset_top = 163.0
+offset_right = 335.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_sou0s")
+text = "NEXT"
+
+[node name="Audio1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_rh8q4")
+
+[node name="Audio2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cyvou")
+
+[node name="Audio3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mgif8")
