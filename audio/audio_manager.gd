@@ -7,6 +7,7 @@ func _ready():
 	SignalBus.combo.connect(on_combo)
 	SignalBus.player_miss.connect(on_player_miss)
 	SignalBus.song_ended.connect(on_song_end)
+	$MainMenuSound.play()
 
 func on_combo(combo_streak : int):
 	match combo_streak:

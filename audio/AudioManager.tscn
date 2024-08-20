@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhgrhdxy65wus"]
+[gd_scene load_steps=9 format=3 uid="uid://bhgrhdxy65wus"]
 
 [ext_resource type="Script" path="res://audio/audio_manager.gd" id="1_5707d"]
 [ext_resource type="AudioStream" uid="uid://bc1r0xuraobip" path="res://audio/sfx/miss.wav" id="2_d6kfq"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dqfm17xv7l514" path="res://audio/sfx/Awesome combo.wav" id="4_n516u"]
 [ext_resource type="AudioStream" uid="uid://dk5517j0n5701" path="res://audio/sfx/They on fire1.wav" id="5_hru6l"]
 [ext_resource type="AudioStream" uid="uid://b2vvmcvs45h4d" path="res://audio/sfx/Full combo.wav" id="7_pkdtx"]
+[ext_resource type="AudioStream" uid="uid://ba2gq5vi8tbq5" path="res://audio/music/TittleScreen.wav" id="8_nx7it"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_5707d")
@@ -28,3 +29,6 @@ stream = ExtResource("7_pkdtx")
 
 [node name="MissSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_d6kfq")
+
+[node name="MainMenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nx7it")
