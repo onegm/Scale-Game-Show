@@ -12,7 +12,8 @@ func _ready():
 	var song = SongSequence.new(song_num)
 	add_child(song)
 	wall_spawner.offset_time_by_position(song.time_sequence, player.position)
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2, false).timeout
 	song.play()
 	wall_spawner.start()
 	$Camera.set_player_position(player.global_position)
+	$AnimationPlayer.play("crowd_bounce")
