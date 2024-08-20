@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc838hd7f3grk"]
+[gd_scene load_steps=8 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
 [ext_resource type="Texture2D" uid="uid://deek3my7ebqq6" path="res://UI/Elements/Play Button HUD element.png" id="2_fxysb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bqlriiilq6r1o" path="res://UI/Elements/Settings Button HUD element.png" id="3_twsxa"]
 [ext_resource type="Texture2D" uid="uid://c38xwex44fx2f" path="res://UI/Elements/Quit Button HUD element.png" id="4_uy6kd"]
 [ext_resource type="Texture2D" uid="uid://bv5isetlscwdn" path="res://UI/Elements/Arrow Keys HUD ELement - All Colours.png" id="6_03f41"]
+[ext_resource type="Texture2D" uid="uid://cwqw83gkp02wk" path="res://UI/Elements/Main Menu BG.png" id="7_f57wt"]
 
 [node name="MenuScreen" type="Control"]
 layout_mode = 3
@@ -153,6 +154,12 @@ scale = Vector2(1, 0.983)
 texture = ExtResource("6_03f41")
 region_enabled = true
 region_rect = Rect2(211.555, 396.446, 134.863, 113.658)
+
+[node name="MainMenuBg" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(647, 633)
+scale = Vector2(1.21091, 1.21091)
+texture = ExtResource("7_f57wt")
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
