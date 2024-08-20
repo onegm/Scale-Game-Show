@@ -11,6 +11,8 @@ var BRICK_WALL_TEXTURE : CompressedTexture2D = load("res://walls/art/walls/color
 var FOAM_WALL_TEXTURE : CompressedTexture2D = load("res://walls/art/walls/color/foam_wall.png")
 var CONCRETE_WALL_TEXTURE : CompressedTexture2D = load("res://walls/art/walls/color/concrete_wall.png")
 
+var song_num : int = 1
+var wall_sequence_num : int = 1
 
 func get_main_scene():
 	return load(main_scene_path)

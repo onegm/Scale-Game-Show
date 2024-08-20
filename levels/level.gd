@@ -8,6 +8,8 @@ extends Node2D
 @onready var player := $Player
 
 func _ready():
+	song_num = Game.song_num
+	wall_sequence_num = Game.wall_sequence_num
 	wall_spawn_marker.add_child(wall_spawner)
 	var song = SongSequence.new(song_num)
 	add_child(song)
