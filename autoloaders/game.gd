@@ -14,5 +14,7 @@ var CONCRETE_WALL_TEXTURE : CompressedTexture2D = load("res://walls/art/walls/co
 var song_num : int = 1
 var wall_sequence_num : int = 1
 
+var instructions_seen := false
+
 func get_main_scene():
 	return load(main_scene_path)

@@ -213,6 +213,39 @@ position = Vector2(647, 633)
 scale = Vector2(1.21091, 1.21091)
 texture = ExtResource("7_f57wt")
 
+[node name="StartBtn3" type="TextureButton" parent="."]
+modulate = Color(0.625907, 0.991185, 0.452437, 1)
+custom_minimum_size = Vector2(300, 80)
+layout_mode = 2
+offset_left = 938.0
+offset_top = 204.0
+offset_right = 1238.0
+offset_bottom = 284.0
+scale = Vector2(0.75, 0.75)
+size_flags_horizontal = 4
+focus_mode = 0
+texture_normal = ExtResource("2_i5hrk")
+texture_pressed = ExtResource("3_qpqur")
+texture_hover = ExtResource("4_gd7t7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="BtnLabel" type="Label" parent="StartBtn3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_jud57")
+theme_override_font_sizes/font_size = 50
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="StartBtn3" to="." method="_on_start_btn_tutorial_pressed"]

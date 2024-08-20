@@ -1,6 +1,9 @@
 extends Control
 
 func _ready():
+	if Game.instructions_seen: 
+		queue_free()
+		return
 	$Button.pressed.connect(on_button_pressed)
 	$Audio1.play()
 	get_tree().paused = true
@@ -18,4 +21,5 @@ func on_button_pressed():
 		$Audio3.play()
 	else:
 		get_tree().paused = false
+		Game.instructions_seen = true
 		queue_free()

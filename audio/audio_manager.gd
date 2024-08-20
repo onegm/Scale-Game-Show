@@ -12,14 +12,12 @@ func on_combo(combo_streak : int):
 	match combo_streak:
 		5:
 			$ComboNice.play()
-		10:
+		15:
 			$ComboGreat.play()
-		20:
+		25:
 			$ComboAwesome.play()
-		30:
-			$ComboFire.play()
 		40:
-			$ComboGetAway.play()
+			$ComboFire.play()
 	
 func on_song_end():
 	if perfect_run:
