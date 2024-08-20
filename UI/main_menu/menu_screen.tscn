@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc838hd7f3grk"]
 
 [ext_resource type="Script" path="res://UI/main_menu/menu_screen.gd" id="1_3k7ia"]
-[ext_resource type="Texture2D" uid="uid://chhuvnqyvlv8l" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_i5hrk"]
+[ext_resource type="Texture2D" uid="uid://d3s4rmkp4f6s0" path="res://UI/Elements/HUD_Element_-_Button_Plain.png" id="2_i5hrk"]
 [ext_resource type="PackedScene" uid="uid://76mxnx5v1b1o" path="res://UI/settings_menu/settings_menu.tscn" id="2_ml36l"]
-[ext_resource type="Texture2D" uid="uid://dhgoc0lfmkbn2" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_qpqur"]
-[ext_resource type="Texture2D" uid="uid://rvivd8yssjuw" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_gd7t7"]
-[ext_resource type="FontFile" uid="uid://coiisp4yxvl7u" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_jud57"]
+[ext_resource type="Texture2D" uid="uid://b1sofi46ngrh8" path="res://UI/Elements/HUD_Element_-_Button_Click.png" id="3_qpqur"]
+[ext_resource type="Texture2D" uid="uid://cjsbsmomjfib0" path="res://UI/Elements/HUD_Element_-_Button_Hover.png" id="4_gd7t7"]
+[ext_resource type="FontFile" uid="uid://pn2b77ys0xk3" path="res://UI/Elements/UDDIGIKYOKASHON-B.TTC" id="5_jud57"]
 [ext_resource type="Texture2D" uid="uid://bv5isetlscwdn" path="res://UI/Elements/Arrow Keys HUD ELement - All Colours.png" id="6_03f41"]
 [ext_resource type="Texture2D" uid="uid://cwqw83gkp02wk" path="res://UI/Elements/Main Menu BG.png" id="7_f57wt"]
 
@@ -24,8 +24,6 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -44.0
-offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -64,33 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_jud57")
 theme_override_font_sizes/font_size = 50
-text = "Exercise 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StartBtn2" type="TextureButton" parent="MainMenu/VBoxContainer"]
-custom_minimum_size = Vector2(300, 80)
-layout_mode = 2
-size_flags_horizontal = 4
-focus_mode = 0
-texture_normal = ExtResource("2_i5hrk")
-texture_pressed = ExtResource("3_qpqur")
-texture_hover = ExtResource("4_gd7t7")
-ignore_texture_size = true
-stretch_mode = 0
-
-[node name="BtnLabel" type="Label" parent="MainMenu/VBoxContainer/StartBtn2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 3.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_jud57")
-theme_override_font_sizes/font_size = 50
-text = "Exercise 2"
+text = "PLAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -242,6 +214,5 @@ scale = Vector2(1.21091, 1.21091)
 texture = ExtResource("7_f57wt")
 
 [connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="MainMenu/VBoxContainer/StartBtn2" to="." method="_on_start_btn_2_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/SettingsBtn" to="." method="_on_settings_btn_pressed"]
 [connection signal="pressed" from="MainMenu/VBoxContainer/QuitBtn" to="." method="_on_quit_btn_pressed"]

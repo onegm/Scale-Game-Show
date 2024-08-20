@@ -13,8 +13,6 @@
 [node name="Level2" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_ixxn0")
-song_num = 3
-wall_sequence_num = 2
 
 [node name="LevelBackground" parent="." instance=ExtResource("2_floph")]
 

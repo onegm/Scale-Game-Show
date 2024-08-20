@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5bg2p28cloq2"]
 
-[ext_resource type="Texture2D" uid="uid://0sudimcyp2ld" path="res://levels/kitbash assets/Color/flat_floor_asset.png" id="1_klgjp"]
+[ext_resource type="Texture2D" uid="uid://dfhdo87gijsgo" path="res://levels/kitbash assets/Color/flat_floor_asset.png" id="1_klgjp"]
 
 [node name="LevelBackground" type="Node2D"]
 
