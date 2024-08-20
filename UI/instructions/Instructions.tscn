@@ -83,7 +83,7 @@ theme_override_constants/shadow_offset_x = 1
 theme_override_constants/shadow_offset_y = 1
 theme_override_fonts/normal_font = ExtResource("1_0sfw8")
 theme_override_font_sizes/normal_font_size = 30
-text = "We've equipped him with a headband outfitted with technology stolen from the US Military who's calls we refuse to return! It'll allow him to grow and shrink himself using the W and S keys! "
+text = "We've equipped him with a headband outfitted with technology stolen from the US Military, whose calls we refuse to return! It'll allow him to grow and shrink himself using the W and S keys! "
 fit_content = true
 
 [node name="Text3" type="RichTextLabel" parent="."]
