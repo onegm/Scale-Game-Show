@@ -1,15 +1,13 @@
 extends Node2D
 
-@export var song_num : int
-@export var wall_sequence_num : int
 @export var random_walls : bool
+@onready var song_num : int = Game.song_num
+@onready var wall_sequence_num : int = Game.wall_sequence_num
 @onready var wall_spawner := WallSpawner.new(wall_sequence_num)
 @onready var wall_spawn_marker := $WallSpawnPoint
 @onready var player := $Player
 
 func _ready():
-	song_num = Game.song_num
-	wall_sequence_num = Game.wall_sequence_num
 	wall_spawn_marker.add_child(wall_spawner)
 	var song = SongSequence.new(song_num)
 	add_child(song)

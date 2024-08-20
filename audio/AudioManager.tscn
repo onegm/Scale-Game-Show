@@ -1,18 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhgrhdxy65wus"]
+[gd_scene load_steps=9 format=3 uid="uid://bhgrhdxy65wus"]
 
 [ext_resource type="Script" path="res://audio/audio_manager.gd" id="1_5707d"]
+[ext_resource type="AudioStream" uid="uid://bc1r0xuraobip" path="res://audio/sfx/miss.wav" id="2_d6kfq"]
+[ext_resource type="AudioStream" uid="uid://dq6jhusjdh2ba" path="res://audio/sfx/Nice combo.wav" id="2_vkhjk"]
+[ext_resource type="AudioStream" uid="uid://b8vf0ykpgtbym" path="res://audio/sfx/Great combo.wav" id="3_51mc1"]
+[ext_resource type="AudioStream" uid="uid://dqfm17xv7l514" path="res://audio/sfx/Awesome combo.wav" id="4_n516u"]
+[ext_resource type="AudioStream" uid="uid://dk5517j0n5701" path="res://audio/sfx/They on fire1.wav" id="5_hru6l"]
+[ext_resource type="AudioStream" uid="uid://dl1gt5gcyuqdu" path="res://audio/sfx/They on fire2.wav" id="6_igkv4"]
+[ext_resource type="AudioStream" uid="uid://b2vvmcvs45h4d" path="res://audio/sfx/Full combo.wav" id="7_pkdtx"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_5707d")
 
 [node name="ComboNice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vkhjk")
 
 [node name="ComboGreat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_51mc1")
 
 [node name="ComboAwesome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_n516u")
 
 [node name="ComboFire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_hru6l")
 
 [node name="ComboGetAway" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_igkv4")
 
 [node name="ComboFull" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_pkdtx")
+
+[node name="MissSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_d6kfq")
